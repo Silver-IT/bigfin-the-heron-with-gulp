@@ -1,0 +1,21 @@
+//-
+	Google Analytics
+- if(core.google_analytics != false)
+	//Google Analytics
+	script
+		|(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		|(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		|m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		|})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		|
+		- if(core.google_analytics.constructor === Array){
+			- for(var i = 0; i < core.google_analytics.length; i++) {
+				|
+				|ga('create', '#{core.google_analytics[i]}', 'gatracker#{i + 1}');
+				|ga('gatracker#{i + 1}.send', 'pageview');
+				|
+			- }
+		- } else {
+			|ga('create', '#{core.google_analytics}', 'auto');
+			|ga('send', 'pageview');
+		- }

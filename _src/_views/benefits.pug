@@ -1,0 +1,88 @@
+extends templates/base.pug
+
+block vars
+
+block hero
+	+hero('Benefits', core.url + "/assets/upload/hero/features.jpg")
+		p Spacious Living & Kitchen Environments
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content
+			+panel('left', 'Kitchen Space', core.url + "/assets/upload/features/kitchen-shoot.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					- Personalize your kitchen space with two variations of modern countertop, cabinet and flooring choices
+					- Stainless steel Whirlpool appliances modernize your kitchen with features that do more, so you have to do less
+					- 3 cm (extra thick!) Quartz countertops are tastefully designed and maintenance free
+					- Our U-shape kitchens are great for hosting dinner parties and providing you with extra counter space for all of your cooking and entertaining adventures* 
+					- Kitchen pantries add extra storage for all your snacks & supplies*  
+					- Open shelving above sink
+					- Enjoy concrete custom built beautiful quartz top kitchen islands in select homes!* 
+					- Air Conditioning on 6th and 7th floors and Live/Work Lofts
+				.c-panel__disclaimer * Only available in select homes.
+			
+			+panel('right', 'Living Space', core.url + "/assets/upload/features/living-shoot.jpg", ['fade-right', 'fade-left'])
+				:markdown
+					- Schlage Keyless Entry to Homes
+					- 100% hard surfaced laminates and concrete in living areas for easy clean up and maintenance, especially for pet owners!*
+					- A full size washer and dryer standard with every new home 
+					- Up to 14’ ceilings for a spacious and open feeling*  
+					- Decks and balconies in select homes to enjoy the territorial views of Redmond
+					- Customizable Thermostats – You can enjoy the optimal level of comfort when you’re at home, and easily adjust and program your thermostat temperature for when you’re away or asleep. –Oversized windows allow optimal natural light for you to enjoy even during our dreary Pacific Northwest days
+					- Do you work from home or like to have a special area dedicated to your computer or crafts? Our thoughtful tech area will allow for this
+				.c-panel__disclaimer * Only available in select homes.
+			
+			+panel('left', 'Bedroom & Bath', core.url + "/assets/upload/features/bedroom-shoot.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					- Spacious walk-in and walk through closets for clothes, shoes and extra storage* 
+					- Unique sliding barn-doors create your room private without taking up additional space* 
+					- Commercial grade carpet tiles in bedrooms
+					- Under-mount sinks
+					- Dual flush toilets 
+					- Quartz countertops
+					- Towel niches
+					- Tiled showers and tub/shower combinations
+				.c-panel__disclaimer * Only available in select homes.
+			
+			+panel('overflow', 'Exclusive VIP Program', false, ['', 'fade-up'])
+				.c-panel__overflow
+					.c-panel__overflow-text.c-text
+						:markdown
+							We have created the **"Resident VIP Program."** The vendors listed have all agreed to extend a courtesy discount to you, our residents, which you can take full advantage of for as long as you live at The Heron.
+
+							Simply show the participating vendor your VIP Membership Card or your discount offer on our exclusive resident app and receive the discount listed! On top of the savings, you can be proud of supporting local neighborhood businesses and the community you live in.
+						
+						.benefit
+							.benefit__grid
+								.benefit__item(style="background-image: url('" + core.url + "/assets/img/benefits/5-stones.jpg');")
+									.benefit__logo(style="background-image: url('" + core.url + "/assets/img/benefits/5-stones.png');")
+									.benefit__text
+										strong 5 Stones Coffee
+										em 10% Off Drinks/Pastries (Excludes Merchandise)
+								.benefit__item(style="background-image: url('" + core.url + "/assets/img/benefits/pinkabella.jpg');")
+									.benefit__logo(style="background-image: url('" + core.url + "/assets/img/benefits/pinkabella.png');")
+									.benefit__text
+										strong Pinka Bella Cupcakes
+										em 10% Off All Products  
+								.benefit__item(style="background-image: url('" + core.url + "/assets/img/benefits/hot-yoga.jpg');")
+									.benefit__logo(style="background-image: url('" + core.url + "/assets/img/benefits/hot-yoga.png');")
+									.benefit__text
+										strong Hot Yoga Experience
+										em 10% Off All Packages (Redmond Location)
+								.benefit__item(style="background-image: url('" + core.url + "/assets/img/benefits/pharmaca.jpg');")
+									.benefit__logo(style="background-image: url('" + core.url + "/assets/img/benefits/pharmaca.png');")
+									.benefit__text
+										strong Pharmaca
+										em 10% Off All Products (Not Prescription)
+								.benefit__item(style="background-image: url('" + core.url + "/assets/img/benefits/redmond-cycle.jpg');")
+									.benefit__logo(style="background-image: url('" + core.url + "/assets/img/benefits/redmond-cycle.png');")
+									.benefit__text
+										strong Redmond Cycle
+										em 10% Off All Products (Excludes Labor)
+								.benefit__item(style="background-image: url('" + core.url + "/assets/img/benefits/cyclebar.jpg');")
+									.benefit__logo(style="background-image: url('" + core.url + "/assets/img/benefits/cyclebar.png');")
+									.benefit__text
+										strong CYCLEBAR Redmond TC
+										em 15% Off All Membership Packages (Excludes Merchandise)
+								
+		

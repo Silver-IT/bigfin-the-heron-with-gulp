@@ -1,0 +1,79 @@
+.c-text {
+	@include bp( 0, m($bp, mobile)) {
+		font-size: 14px;
+	}
+	@include bp( m($bp, mobile)) {
+		font-size: 16px;
+	}
+	&--center {
+		@include bp( m($bp, mobile)) {
+			text-align: center;
+		}
+	}
+	&--space {
+		margin-top: 30px;
+	}
+	p, ul {
+		margin-top: 30px;
+		&:first-child {
+			margin-top: 0;
+		}
+		a {
+			color: m($color, primaryDark);
+
+			text-decoration: underline;
+		}
+	}
+	h3 {
+		color: m($color, primaryDark);
+
+		font-size: 22px;
+		& + p {
+			margin-top: 10px;
+		}
+	}
+	p {
+		line-height: 1.8em;
+		strong {
+			color: m($color, black);
+
+			font-weight: 700;
+		}
+	}
+	ul {
+		li {
+			position: relative;
+
+			margin-top: 10px;
+
+			padding-left: 20px;
+
+			line-height: 1.2em;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:after {
+				position: absolute;
+				top: 9px;
+				left: 0;
+
+				width: 3px;
+				height: 3px;
+
+				content: '';
+
+				background-color: m($color, secondary);
+
+				//transform: translate(0, -50%);
+			}
+		}
+	}
+	&__label {
+		color: m($color, secondary);
+
+		font-size: 12px;
+		font-weight: 700;
+
+		text-transform: uppercase;
+	}
+}

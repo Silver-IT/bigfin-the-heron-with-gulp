@@ -1,0 +1,82 @@
+.c-masthead {
+	@include bp( m($bp, tablet)) {
+		height: 100px;
+	}
+
+	position: relative;
+	z-index: 600;
+
+	height: 70px;
+
+	color: white;
+
+	background-color: rgba(black, 0.5);
+
+	@extend %cf;
+
+	&__logo {
+		@include bp( m($bp, tablet)) {
+			width: 100px;
+			height: 100px;
+
+			background-image: url('../img/logo.jpg');
+		}
+
+		position: absolute;
+		top: 0;
+
+		display: block;
+		overflow: hidden;
+
+		width: 70px;
+		height: 70px;
+
+		text-indent: -300%;
+
+		background-color: m($color, secondary);
+		background-image: url('../img/logo--bronze.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	&__nav {
+		float: right;
+	}
+	&__menu {
+		display: none;
+	}
+	&__right {
+		@include bp( m($bp, tablet)) {
+			display: none;
+		}
+
+		display: block;
+		float: right;
+
+		color: white;
+
+		@extend %cf;
+	}
+	&__item {
+		float: left;
+
+		padding-right: 20px;
+		padding-left: 20px;
+
+		font-size: 22px;
+		line-height: 70px;
+
+		cursor: pointer;
+		span {
+			position: relative;
+			top: -3px;
+
+			margin-left: 4px;
+
+			font-size: 12px;
+			font-weight: 700;
+
+			text-transform: uppercase;
+		}
+	}
+}

@@ -1,0 +1,463 @@
+.c-page {
+	$p: &;
+
+	@include bp( 0, m($bp, tablet) ) {
+		background-color: white;
+	}
+	@include bp( m($bp, tablet) ) {
+		&[data-available="now"] {
+			#{$p}__details {
+				&:after {
+					position: absolute;
+					top: -50px;
+					left: -80px;
+
+					width: 240px;
+
+					color: white;
+
+					font-family: m($font, family, special);
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 40px;
+
+					text-align: center;
+					text-transform: uppercase;
+
+					content: 'Available Now!!';
+
+					background-color: m($color, secondary);
+
+					transform: rotate(-45deg);
+					transform-origin: 100% 100%;
+				}
+			}
+		}
+	}
+
+	position: relative;
+
+	@extend %cf;
+
+	&__back {
+		@include bp( m($bp, tablet) ) {
+			top: -30px;
+		}
+		@include bp( m($bp, desktop) ) {
+			top: -40px;
+		}
+
+		position: absolute;
+		top: -20px;
+		left: 20px;
+
+		opacity: 0.5;
+
+		padding-left: 20px;
+
+		font-family: m($font, family, special);
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 40px;
+
+		text-transform: uppercase;
+
+		cursor: pointer;
+
+		transform: translate(0, -50%);
+		i {
+			position: absolute;
+			top: -2px;
+			left: 0;
+
+			height: 100%;
+
+			font-size: 17px;
+			font-weight: 400;
+			line-height: 43px;
+		}
+		&:hover {
+			opacity: 1;
+
+			color: m($color, grayMid);
+			i {
+				color: m($color, primary);
+			}
+		}
+	}
+	&__forward {
+		@include bp( m($bp, tablet) ) {
+			top: -30px;
+		}
+		@include bp( m($bp, desktop) ) {
+			top: -40px;
+		}
+
+		position: absolute;
+		top: -20px;
+		right: 20px;
+
+		opacity: 0.5;
+
+		padding-right: 20px;
+
+		font-family: m($font, family, special);
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 40px;
+
+		text-transform: uppercase;
+
+		cursor: pointer;
+
+		transform: translate(0, -50%);
+		&--mobile {
+			@include bp( m($bp, tablet) ) {
+				display: none;
+			}
+		}
+		&--desktop {
+			@include bp( 0, m($bp, tablet) ) {
+				display: none;
+			}
+		}
+		i {
+			position: absolute;
+			top: -2px;
+			right: 0;
+
+			height: 100%;
+
+			font-size: 17px;
+			font-weight: 400;
+			line-height: 43px;
+		}
+		&:hover {
+			opacity: 1;
+
+			color: m($color, grayMid);
+			i {
+				color: m($color, primary);
+			}
+		}
+	}
+	&__details {
+		@include bp(0, m($bp, tablet) ) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		@include bp( m($bp, tablet) ) {
+			float: left;
+
+			width: calc(100% - 370px);
+
+			padding: 80px;
+
+			border: 1px solid m($color, grayLight);
+		}
+
+		position: relative;
+
+		overflow: hidden;
+
+		background-color: white;
+	}
+	&__title {
+		@include bp( m($bp, small)) {
+			font-size: 60px;
+		}
+
+		color: m($color, primaryDark);
+
+		font-family: m($font, family, special);
+		font-size: 30px;
+		font-weight: 300;
+
+		text-align: center;
+		text-transform: uppercase;
+		strong {
+			font-weight: 700;
+		}
+	}
+	&__type {
+		margin-top: 0;
+		margin-top: 10px;
+
+		color: m($color, gray);
+
+		font-family: m($font, family, special);
+		font-size: 18px;
+
+		text-align: center;
+	}
+	&__top {
+		margin-bottom: 40px;
+
+		padding-bottom: 40px;
+
+		border-bottom: 1px solid m($color, grayLight);
+	}
+	&__util {
+		margin-right: auto;
+		margin-left: auto;
+
+		@extend %cf;
+	}
+	&__link {
+		position: relative;
+
+		display: block;
+		float: left;
+
+		width: 50%;
+		height: 30px;
+
+		color: m($color, primaryDark);
+
+		font-family: m($font, family, special);
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 30px;
+
+		text-transform: uppercase;
+
+		i {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 20px;
+			height: 30px;
+
+			color: m($color, primary);
+
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 28px;
+
+			text-align: center;
+			&.fa-file-text {
+				font-size: 20px;
+			}
+		}
+		a {
+			@include bp( 0, m($bp, mobile) ) {
+				width: 120px;
+			}
+
+			position: relative;
+
+			display: block;
+
+			width: 180px;
+			height: 30px;
+
+			margin-right: auto;
+			margin-left: auto;
+
+			padding-left: 26px;
+
+			line-height: 30px;
+		}
+
+		em {
+			@include bp( 0, m($bp, mobile) ) {
+				display: none;
+			}
+		}
+	}
+	&__floor {
+		margin-top: 40px;
+
+		padding-top: 40px;
+
+		border-top: 1px solid m($color, grayLight);
+		img {
+			width: auto;
+			max-width: 100%;
+			min-height: 150px;
+
+			margin-right: auto;
+			margin-left: auto;
+
+			background-color: m($color, gray2);
+		}
+	}
+	&__disclaimer {
+		margin-top: 20px;
+
+		color: rgba( m($color, gray), 0.5);
+
+		font-size: 10px;
+
+		text-align: center;
+	}
+	&__form {
+		@include bp( 0, m($bp, tablet) ) {
+			padding-top: 40px;
+
+			border-top: 1px solid m($color, grayLight);
+		}
+		@include bp( m($bp, tablet) ) {
+			float: right;
+
+			width: 330px;
+
+			padding: 20px;
+
+			box-shadow: 0 0 30px rgba(black, 0.1);
+
+			background-color: m($color, primaryDark);
+		}
+
+		position: relative;
+
+		overflow: hidden;
+
+		@extend %cf;
+	}
+	&__info {
+		li {
+			margin-top: 6px;
+
+			font-size: 14px;
+
+			@extend %cf;
+		}
+		strong {
+			float: left;
+
+			width: 50%;
+
+			color: m($color, grayMid);
+
+			font-weight: 700;
+		}
+		em {
+			i {
+				position: relative;
+				top: -1px;
+
+				color: m($color, secondary);
+			}
+		}
+	}
+	&__sidetitle {
+		@include bp( 0, m($bp, mobile) ) {
+			font-size: 30px;
+		}
+		@include bp( m($bp, tablet) ) {
+			color: white;
+		}
+
+		position: relative;
+		z-index: 100;
+
+		color: m($color, grayMid);
+
+		font-family: m($font, family, special);
+		font-size: 32px;
+		font-weight: 300;
+
+		text-transform: uppercase;
+		&:after {
+			display: block;
+
+			width: 60px;
+			height: 3px;
+
+			margin-top: 10px;
+
+			content: '';
+
+			background-color: m($color, secondary);
+		}
+	}
+	&__phone {
+		@include bp( m($bp, tablet) ) {
+			color: white;
+		}
+
+		margin-top: 20px;
+
+		text-align: center;
+		em {
+			display: block;
+
+			font-size: 14px;
+		}
+		strong {
+			@include bp( m($bp, tablet) ) {
+				color: white;
+			}
+
+			display: block;
+
+			margin-top: 5px;
+
+			color: m($color, grayMid);
+
+			font-family: m($font, family, heading);
+			font-size: 30px;
+			font-weight: 700;
+
+			text-transform: uppercase;
+		}
+	}
+	&__section {
+		margin-top: 40px;
+
+		padding-top: 40px;
+		padding-bottom: 10px;
+
+		border-top: 1px solid m($color, grayLight);
+
+		color: m($color, secondary);
+
+		font-family: m($font, family, heading);
+		font-size: 12px;
+		font-weight: 700;
+
+		text-transform: uppercase;
+	}
+	&__standard {
+		li {
+			position: relative;
+
+			margin-top: 6px;
+
+			padding-left: 20px;
+
+			font-size: 14px;
+			&:after {
+				position: absolute;
+				top: 0.5em;
+				left: 0;
+
+				width: 3px;
+				height: 3px;
+
+				content: '';
+
+				background-color: m($color, secondary);
+			}
+			a {
+				color: m($color, primary);
+
+				text-decoration: underline;
+			}
+		}
+	}
+	&__scheme {
+		display: inline-block;
+
+		width: 50%;
+		height: 30px;
+
+		border: 1px solid m($color, grayLight);
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+}

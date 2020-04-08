@@ -1,0 +1,46 @@
+/**********
+Settings
+**********/
+
+$color: (
+	primary: #20204a,
+	primaryDark: #2a3241,
+	primaryLight: lighten(#20204a, 15),
+
+	secondary: #bd8f57,
+	secondaryDark: darken(#bd8f57, 15),
+	secondaryLight: lighten(#bd8f57, 15),
+
+	gray: #717784,
+	grayMid: #555555,
+	grayLight: #f0f0f0,
+
+	black: #222834,
+
+	status: (
+		error: red,
+		success: green,
+	)
+);
+$font: (
+	family: (
+		base: ('Lato', 'Arial', sans-serif),
+		heading: ('Lato', 'Arial', sans-serif)
+	)
+);
+$bp: (
+	small: 440px,
+	mobile: 740px,
+	tablet: 1020px,
+	desktop: 1300px,
+	max: 1500px
+);
+
+
+
+//css variable table of contents
+$var-maps: (
+	color: $color,
+	font: $font,
+	bp: $bp
+);

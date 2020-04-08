@@ -1,0 +1,55 @@
+.c-btn {
+	display: block;
+
+	height: 60px;
+
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 60px;
+
+	text-transform: uppercase;
+
+	cursor: pointer;
+
+	&--center {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	&--set {
+		@include bp( m($bp, mobile)) {
+			width: 100%;
+			max-width: 240px;
+		}
+
+		width: 100%;
+	}
+	&--space {
+		margin-top: 30px;
+	}
+
+	&--secondary {
+		color: white;
+
+		text-align: center;
+
+		background-color: m($color, secondary);
+		&:hover {
+			background-color: m($color, secondaryDark);
+		}
+	}
+
+	&--outline-white {
+		border: 1px solid white;
+
+		color: white;
+
+		line-height: 58px;
+
+		text-align: center;
+		&:hover {
+			border-color: m($color, secondary);
+
+			background-color: m($color, secondary);
+		}
+	}
+}

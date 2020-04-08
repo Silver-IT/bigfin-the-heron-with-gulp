@@ -1,0 +1,156 @@
+.c-unit {
+	@include bp( 0, 520px ) {
+		padding-left: 10px;
+		&__sf {
+			&:before {
+				padding-right: 5px;
+				padding-left: 5px;
+
+				content: '-';
+			}
+		}
+		&__type, &__sf {
+			float: left;
+
+			font-size: 14px;
+		}
+		&__id {
+			padding-top: 10px;
+		}
+	}
+	@include bp( 520px ) {
+		padding-left: 10px;
+
+		line-height: 50px;
+	}
+
+	position: relative;
+
+	height: 50px;
+
+
+
+	&__wrap {
+		cursor: default;
+
+		@extend %cf;
+	}
+	&--head {
+		@include bp( 520px ) {
+			display: block;
+		}
+
+		display: none;
+
+		height: auto;
+
+		padding-bottom: 10px;
+
+		font-family: m($font, family, special);
+		font-weight: 700;
+		line-height: normal;
+	}
+	&--selection {
+		margin-top: 10px;
+
+		border: 1px solid m($color, grayLight);
+
+		transition: 0.25s border ease;
+		&:hover {
+			border-color: m($color, secondary);
+		}
+		.c-unit__id {
+			color: m($color, secondary);
+		}
+	}
+	&__id, &__sf, &__type, &__scheme, &__view, &__cta {
+		@include bp( 520px ) {
+			float: left;
+		}
+
+		position: relative;
+
+		.c-unit--head & {
+			color: m($color, grayMid) !important;
+
+			font-size: 12px;
+			font-weight: 700;
+
+			text-transform: uppercase;
+		}
+	}
+
+
+
+	&__id {
+		width: 60px;
+
+		color: m($color, grayMid);
+
+		font-weight: 700;
+		&:hover {
+			color: m($color, primary);
+
+			cursor: pointer;
+		}
+	}
+	&__sf {
+		@include bp( 520px ) {
+			width: 100px;
+		}
+	}
+	&__type {
+		@include bp( 520px ) {
+			width: 150px;
+		}
+	}
+	&__scheme, &__view {
+		@include bp( 0, m($bp, mobile) ) {
+			display: none;
+		}
+	}
+	&__scheme {
+		width: 90px;
+
+		margin-right: 40px;
+	}
+	&__interact {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	&__tooltip {
+		position: absolute;
+		top: 0;
+
+		margin-left: 4px;
+
+		color: m($color, primary);
+
+		font-size: 12px;
+		font-weight: 700;
+	}
+	&__cta {
+		width: 70px;
+		height: 30px;
+
+		margin-left: 10px;
+
+		color: white;
+
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 30px;
+
+		text-align: center;
+		text-transform: uppercase;
+
+		cursor: pointer;
+
+		background-color: m($color, secondary);
+		&:hover {
+			background-color: m($color, secondaryDark);
+		}
+	}
+}

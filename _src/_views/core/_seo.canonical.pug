@@ -1,0 +1,11 @@
+//-
+	Canonical Support
+	Source: https://yoast.com/rel-canonical/
+	
+	Discussion:
+	It is Google's recommendation to put canonicals on every page. However there are times when canonicals should not be used, most notably with archived pages. How this effects JavaScript rendered content, I am not sure.
+-
+	if(core.canonical == false)
+		core.canonical = core.url + core.path;
+
+link(href=core.canonical rel="canonical")

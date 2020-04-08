@@ -1,0 +1,301 @@
+.c-panel {
+	$p: &;
+
+	@include bp( 0, m($bp, tablet) ) {
+		margin-top: 40px;
+
+		padding-top: 40px;
+
+		border-top: 1px solid m($color, grayLight);
+		&:first-child {
+			margin-top: 0;
+
+			padding-top: 0;
+
+			border-top: none;
+		}
+	}
+	@include bp( m($bp, tablet) ) {
+		margin-top: 180px;
+		margin-bottom: 120px;
+
+		padding-top: 60px;
+		&--left, &--left-small-space {
+			#{$p}__content {
+				float: left;
+				&:before {
+					left: 45px;
+
+					width: 100%;
+				}
+			}
+			#{$p}__text {
+				padding-right: 90px;
+				padding-left: 90px;
+			}
+			#{$p}__img {
+				right: 0;
+				&:before {
+					left: -45px;
+				}
+			}
+		}
+		&--right, &--right-small-space {
+			#{$p}__content {
+				float: right;
+				&:before {
+					right: 0;
+
+					width: calc(100% + 45px);
+				}
+			}
+			#{$p}__title {
+				padding-left: 45px;
+			}
+			#{$p}__text {
+				padding-right: 90px;
+				padding-left: 90px;
+			}
+			#{$p}__img {
+				left: 0;
+				&:before {
+					right: -45px;
+				}
+			}
+		}
+		&--left-small-space, &--right-small-space {
+			margin-bottom: 60px;
+		}
+		&--full, &--full-small-space {
+			margin-bottom: 60px;
+			#{$p}__content {
+				width: 100%;
+				&:before {
+					left: 45px;
+
+					width: calc(100% - 45px);
+				}
+			}
+		}
+		&--full-small-space {
+			margin-top: 60px;
+		}
+		&--overflow {
+			margin-bottom: 60px;
+			#{$p}__content {
+				width: 100%;
+				&:before {
+					left: 45px;
+
+					width: calc(100% - 90px);
+				}
+			}
+			& + .c-panel--right, & + .c-panel--left {
+				margin-top: 120px;
+			}
+		}
+	}
+
+	position: relative;
+
+	@extend %cf;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&__title {
+		@include bp( m($bp, tablet) ) {
+			font-size: 42px;
+		}
+
+		position: relative;
+		top: -0.08em;
+		left: -0.11em;
+
+		margin-bottom: 20px;
+
+		color: m($color, primary);
+
+		font-size: 28px;
+		font-weight: 300;
+		line-height: 0.85em;
+
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+	&__content {
+		@include bp( m($bp, tablet) ) {
+			width: 50%;
+			&:before {
+				position: absolute;
+				top: -60px;
+				z-index: 0;
+
+				height: calc(100% + 120px); //double of 60px space
+
+				border: 3px solid m($color, grayLight);
+
+				content: '';
+			}
+		}
+
+		position: relative;
+		z-index: 100;
+	}
+	&__text {
+		@include bp( m($bp, tablet) ) {
+			min-height: 260px;
+		}
+
+		position: relative;
+	}
+	&__img {
+		@include bp( 0, m($bp, tablet) ) {
+			position: relative;
+
+			margin-top: 30px;
+
+			padding-top: 60%;
+		}
+		@include bp( m($bp, tablet) ) {
+			position: absolute;
+
+			width: 50%;
+			height: calc(100% + 60px);
+			&:before {
+				position: absolute;
+				top: 65px;
+				z-index: 100;
+
+				width: 90px;
+				height: 3px;
+
+				content: '';
+
+				background-color: m($color, secondary);
+			}
+		}
+
+		z-index: 200;
+
+		width: 100%;
+
+		background-color: m($color, grayLight);
+	}
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		filter: contrast(1.25);
+	}
+	&__disclaimer {
+		margin-top: 30px;
+
+		font-size: 14px;
+	}
+
+	//grid for half view
+	&__grid {
+		@include bp( m($bp, tablet) ) {
+			width: calc(100% + 40px);
+
+			padding-right: 45px;
+			padding-left: 90px;
+		}
+
+		@extend %cf;
+	}
+	&__half, &__third {
+		float: left;
+
+		width: 100%;
+	}
+	&__half {
+		@include bp(0, m($bp, tablet) ) {
+			margin-top: 40px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		@include bp( m($bp, tablet) ) {
+			width: calc(50% - 40px);
+
+			margin-right: 40px;
+		}
+	}
+	&__third {
+		@include bp(0, m($bp, mobile) ) {
+			margin-top: 40px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		@include bp( m($bp, mobile) ) {
+			width: calc(33.33% - 20px);
+
+			margin-right: 20px;
+		}
+		@include bp( m($bp, tablet) ) {
+			width: calc(33.33% - 40px);
+
+			margin-right: 40px;
+		}
+	}
+
+	//form special
+	&__form {
+		@include bp( 0, m($bp, tablet) ) {
+			margin-top: 40px;
+
+			padding-top: 20px;
+
+			border-top: 1px solid m($color, grayLight);
+		}
+		@include bp( m($bp, tablet) ) {
+			float: right;
+
+			width: 50%;
+
+			padding-top: 28px;
+			padding-right: 60px;
+			padding-bottom: 60px;
+			padding-left: 60px;
+
+			background-color: m($color, primaryDark);
+			&:before {
+				position: absolute;
+				top: 65px;
+				left: -45px;
+
+				width: 90px;
+				height: 3px;
+
+				content: '';
+
+				background-color: m($color, secondary);
+			}
+		}
+
+		position: relative;
+		z-index: 200;
+	}
+
+	//really just for map
+	&__overflow {
+		@include bp( m($bp, tablet) ) {
+			padding-left: 90px;
+			&-text {
+				padding-right: 90px;
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+/**********
+CSS Variables
+
+Mixin to start using CSS variables
+Dependency: assumes you have a sass map called $var-maps with all your variables
+**********/
+
+@mixin v($prop, $keys...) {
+	$value: $var-maps;
+
+	$var-output: '-';
+
+    @each $key in $keys {
+		$var-output: #{$var-output}-#{$key};
+		$value: map-get($value, $key);
+    }
+
+	#{$prop}: var($var-output);
+	#{$prop}: $value;
+}
+
+@mixin vroot() {
+	:root {
+		@each $var-map-name, $var-map in $var-maps {
+
+			@each $var, $val in $var-map {
+				@if type-of($val) == map {
+					@each $var-n, $val-n in $val {
+						--#{$var-map-name}-#{$var}-#{$var-n}: $val-n;
+					}
+				} @else {
+					--#{$var-map-name}-#{$var}: $val;
+				}
+			}
+		}
+	}
+}

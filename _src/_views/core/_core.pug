@@ -1,0 +1,46 @@
+//----------------------------------------------
+	Core Default Settings & Variables
+	
+	Discussion:
+	All of the default data below is available as global variables. The gulp task passes this data forward and you can overrid them at any time by passing through your custom data through block core_data.
+	
+	In general, this _core.pug file should NOT be edited. Everything should be handled by extending this template file. If core assumptions are too restrictive, or certain things cannot be achieved, then an update can be discussed.
+
+
+block core_data
+
+
+-
+	if(core.dev == true) {
+		core.url = core.dev_url;
+	}
+
+
+doctype
+html(lang=core.lang)
+	head
+		//- Essential Meta
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		meta(name="viewport" content=core.viewport)
+		
+		
+		//- SEO
+		title= core.title
+		meta(name="description" content=core.description)
+		include _seo.canonical.pug
+		include _seo.robots.pug
+		include _seo.open_graph.pug
+		include _seo.twitter_card.pug
+		
+		
+		//- Block Head
+		block core_head
+		
+		
+		//- Inline Resource Calling
+		include _script.typekit.pug
+		include _script.google_analytics.pug
+	body
+		//- Block Body
+		block core_body

@@ -1,0 +1,110 @@
+/**********
+Wrapper
+**********/
+
+.l-wrap {
+	$gutter: 20px;
+
+	position: relative;
+
+	width: 100%;
+	&--max {
+		overflow: hidden;
+
+		max-width: 1500px;
+
+		margin-right: auto;
+		margin-left: auto;
+
+		box-shadow: 0 0 25px rgba(black, 0.15);
+
+		background-color: white;
+	}
+	&--full {
+	}
+	&--content {
+		max-width: 1340px;
+
+		margin-right: auto;
+		margin-left: auto;
+
+		padding-right: #{$gutter};
+		padding-left: #{$gutter};
+	}
+
+	&--mid {
+		max-width: 1020px;
+
+		margin-right: auto;
+		margin-left: auto;
+
+		padding-right: #{$gutter};
+		padding-left: #{$gutter};
+
+		@extend %cf;
+	}
+
+
+
+	&--mini {
+		@include bp( 0, m($bp, tablet) ) {
+			padding-bottom: 40px;
+
+			border-bottom: 1px solid m($color, grayLight);
+		}
+
+		max-width: 800px;
+
+		margin-right: auto;
+		margin-left: auto;
+
+		@extend %cf;
+	}
+
+	&--padding {
+		@include bp( m($bp, tablet) ) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		@include bp( m($bp, desktop) ) {
+			padding-top: 90px;
+			padding-bottom: 90px;
+		}
+
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	&--no-bottom {
+		@include bp( m($bp, tablet) ) {
+			padding-bottom: 0;
+		}
+	}
+	&--gray {
+		background-color: m($color, grayLight);
+	}
+	&--primary {
+		background-color: m($color, primaryDark);
+	}
+	&--units {
+		position: relative;
+
+		padding-left: 300px;
+	}
+	&--nav-fix {
+		position: relative;
+
+		height: 0;
+		&:after {
+			position: absolute;
+			top: - 100px;
+			left: 0;
+
+			width: 100%;
+			height: 100px;
+
+			content: '';
+
+			background-color: m($color, primary);
+		}
+	}
+}

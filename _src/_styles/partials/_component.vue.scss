@@ -1,0 +1,63 @@
+.c-vue {
+	$p: &;
+	&__load {
+		display: block;
+
+		margin-top: 40px;
+
+		color: m($color, primary);
+
+		font-size: 30px;
+
+		text-align: center;
+	}
+	&__view {
+		display: none;
+
+		margin-top: 40px;
+	}
+	&__none {
+		@include bp( 0, 520px ) {
+			padding-top: 40px;
+		}
+
+		text-align: center;
+		i {
+			display: block;
+
+			color: m($color, black);
+
+			font-size: 40px;
+		}
+		strong {
+			display: block;
+
+			margin-top: 20px;
+
+			color: m($color, black);
+
+			font-size: 18px;
+			font-weight: 700;
+		}
+		em {
+			display: block;
+
+			margin-top: 10px;
+			span {
+				color: m($color, primary);
+
+				text-decoration: underline;
+
+				cursor: pointer;
+			}
+		}
+	}
+	&[data-state="active"] {
+		#{$p}__load {
+			display: none;
+		}
+		#{$p}__view {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+/**********
+Breakpoint
+
+Breakpoint mixin for width based media queries
+By default, accepts a single variable (eg. bp(1000px)) and sets min-width media query
+Two variables can be passed to create a min-max range (eg. bp(400px, 1000px))
+**********/
+
+//Full breakpoint name available
+@mixin breakpoint( $min-width, $max-width: false ) {
+	@include bp($min-width, $max-width);
+}
+
+//Shorthand
+@mixin bp( $min-width, $max-width: false ) {
+	@if $max-width {
+		@media ( min-width: $min-width ) and ( max-width: $max-width - 1 ) {
+			@content
+		}
+	} @else {
+		@media ( min-width: $min-width ) {
+			@content
+		}
+	}
+}

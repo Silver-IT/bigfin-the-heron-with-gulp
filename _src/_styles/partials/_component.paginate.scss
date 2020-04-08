@@ -1,0 +1,81 @@
+.c-paginate {
+	width: 100%;
+	height: 40px;
+
+	margin-top: 40px;
+	margin-right: auto;
+	margin-left: auto;
+
+	border: 1px solid m($color, grayLight);
+
+	line-height: 40px;
+
+	background-color: m($color, grayLight);
+
+	@extend %cf;
+	&__next, &__prev {
+		position: relative;
+		top: -1px;
+
+		width: 70px;
+
+		color: white;
+
+		font-family: m($font, family, special);
+		font-weight: 700;
+
+		text-align: center;
+		text-transform: uppercase;
+
+		cursor: pointer;
+
+		background-color: m($color, primaryDark);
+		i {
+			position: relative;
+			top: -2px;
+
+			font-size: 12px;
+			font-weight: 400;
+		}
+		&:hover {
+			background-color: m($color, black);
+		}
+	}
+	&__next {
+		right: -1px;
+
+		float: right;
+
+		text-indent: -2px;
+
+
+		i {
+			padding-left: 4px;
+		}
+	}
+	&__prev {
+		left: -1px;
+
+		float: left;
+
+		text-indent: 2px;
+
+
+		i {
+			padding-right: 4px;
+		}
+	}
+	&__current {
+		float: left;
+
+		width: calc(100% - 140px);
+
+		color: m($color, grayMid);
+
+		font-family: m($font, family, special);
+		font-weight: 700;
+
+		text-align: center;
+		text-transform: uppercase;
+	}
+}

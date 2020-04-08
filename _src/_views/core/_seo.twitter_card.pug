@@ -1,0 +1,23 @@
+//-
+	Twitter Card
+
+	Note:
+	Only supports summary card at the moment...
+
+//Twitter
+meta(name="twitter:card" content=core.twitter.card)
+
+- if(core.twitter.site != false)
+	meta(name="twitter:site" content=core.twitter.site)
+
+//- Title
+- if(core.twitter.title == false)
+	meta(name="twitter:title" content=core.title)
+- else
+	meta(name="twitter:title" content=core.twitter.title)
+
+//- Description
+- if(core.twitter.description == false)
+	meta(property="twitter:description" content=core.description)
+- else
+	meta(property="twitter:description" content=core.twitter.description)

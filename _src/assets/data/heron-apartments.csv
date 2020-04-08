@@ -1,0 +1,96 @@
+id,availability,floor-plan,type,den,loft,arch,ada,sf,floor,view,scheme,kitchen,flooring-type,barn-door,windows,bed,bath,closet-wic,clost-wtc,outdoor,ac
+101,Y,LW,LW Loft,0,1,N,N,748,1,SW,Gray,L,Concrete,0,0,0,0,1,0,Patio,Y
+102,Y,LW,LW Loft,0,1,N,N,921,1,W,Gray,L,Concrete,0,0,0,0,1,0,Patio,Y
+131,Y,LW,LW,0,0,N,N,634,1,N,White,L,Concrete,0,0,0,0,0,0,Patio,Y
+132,Y,LW,LW,0,1,N,N,762,1,N,White,L,Concrete,0,0,0,0,0,0,Patio,Y
+133,Y,LW,LW,0,1,N,N,959,1,N,White,G,Concrete,0,0,0,0,1,0,Patio,Y
+301,Y,B1.2,2x2,0,0,N,N,978,3,SW,White,G,Concrete,0,0,2,2,1,0,None,N
+302,Y,A2.2,1x1,0,0,N,N,978,3,W,White,G,Concrete,1,0,1,1,1,0,Deck,N
+305,Y,B7.2,2x2,0,0,N,N,1008,3,S,White,L,Concrete,1,3,2,2,0,1,None,N
+306,Y,B3.2,2x2,0,0,N,N,1047,3,N+CY,White,G,Concrete,1,7,2,2,0,1,Patio,N
+307,Y,A1.1,Urban One,0,0,Y,N,647,3,S,White,G,Concrete,1,2,0,1,0,0,None,N
+308,Y,A4.2,1x1,0,0,N,N,625,3,N+CY,White,G,Concrete,1,5,1,1,1,0,Patio,N
+309,Y,B7.2,2x2,0,0,N,N,1005,3,S,White,L,Concrete,1,4,2,2,0,1,None,N
+310,N,B6.1,2x2,0,0,Y,N,965,3,E,White,L,Concrete,1,4,2,2,0,0,Patio,N
+311,Y,C1.3,3x2,0,0,N,N,1402,3,SE,White,G,Concrete,1,8,3,2,0,1,None,N
+321,Y,B4.3,2x2,0,0,N,N,1222,3,W,White,G,Concrete,1,9,2,2,0,1,None,N
+322,Y,B5.2,2x2,0,0,N,N,886,3,NW,White,G,Concrete,0,7,2,2,0,1,Deck,N
+324,N,A5.2,1x1,0,0,N,N,585,3,N,White,L,Concrete,0,3,1,1,1,0,None,N
+325,Y,A6.1,1x1,0,0,N,N,565,3,S+CY,White,G,Concrete,0,4,1,1,1,0,Patio,N
+326,Y,A7.2,1x1,0,0,N,N,690,3,N,White,L,Concrete,1,3,1,1,1,0,None,N
+329,Y,A8.2,1x1,0,0,N,N,763,3,S+CY,White,G,Concrete,0,5,1,1,1,0,Patio,N
+330,Y,A9.2,1x1,0,0,N,N,666,3,N,White,L,Concrete,1,3,1,1,0,1,None,N
+331,Y,B2,2x2,0,0,N,N,964,3,SE,White,L,Concrete,0,5,2,2,0,0,None,N
+332,Y,A3.3,1x1 Den,1,0,N,N,792,3,N,White,G,Concrete,1,7,1,1,0,0,Deck,N
+401,Y,B1,2x2,0,0,N,N,978,4,SW,Gray,G,Vinyl,0,5,2,2,1,0,None,N
+402,Y,A2,1x1,0,0,N,N,722,4,W,Gray,G,Vinyl,1,3,1,1,1,0,Deck,N
+405,Y,B7,2x2,0,0,N,N,1008,4,S,Gray,L,Vinyl,1,7,2,2,0,1,None,N
+406,Y,B3,2x2,0,0,N,N,1047,4,N+CY,Gray,G,Vinyl,1,7,2,2,0,1,Deck,N
+407,Y,A1,Urban One,0,0,Y,N,647,4,S,Gray,G,Vinyl,1,2,0,1,0,0,None,N
+408,Y,A4,1x1,0,0,N,N,625,4,N+CY,Gray,G,Vinyl,1,5,1,1,1,0,Deck,N
+409,Y,B7,2x2,0,0,N,N,1005,4,S,Gray,L,Vinyl,1,4,2,2,0,1,None,N
+410,N,B6,2x2,0,0,Y,N,1062,4,SE,Gray,G,Vinyl,0,5,2,2,1,0,None,N
+411,Y,C1.1,3x2,0,0,N,N,1402,4,SE,Gray,G,Vinyl,1,7,3,2,0,1,None,N
+421,Y,B4,2x2,0,0,N,N,1222,4,W,Gray,G,Vinyl,1,9,2,2,0,1,None,N
+422,Y,B5,2x2,0,0,N,N,886,4,NW,Gray,G,Vinyl,0,7,2,2,0,1,Deck,N
+424,Y,A5,1x1,0,0,N,N,585,4,N,Gray,L,Vinyl,0,3,1,1,1,0,None,N
+425,N,A6,1x1,0,0,N,N,680,4,S+CY,Gray,L,Vinyl,0,5,1,1,0,0,Deck,N
+426,Y,A7,1x1,0,0,N,N,690,4,N,Gray,L,Vinyl,1,3,1,1,1,0,None,N
+429,Y,A9,1x1,0,0,N,N,763,4,S,Gray,G,Vinyl,0,5,1,1,1,0,Deck,N
+430,Y,A9,1x1,0,0,N,N,666,4,N,Gray,L,Vinyl,1,3,1,1,0,1,None,N
+431,Y,B2,2x2,0,0,N,N,964,4,SE,Gray,L,Vinyl,0,6,2,2,0,0,None,N
+432,Y,A3,1x1 Den,1,0,N,N,792,4,N,Gray,G,Vinyl,1,7,1,1,0,0,Deck,N
+501,Y,B1,2x2,0,0,N,N,978,5,SW,White,G,Vinyl,0,5,2,2,1,0,None,N
+502,Y,A2,1x1,0,0,N,N,722,5,NW,White,G,Vinyl,1,7,1,1,1,0,Deck,N
+505,Y,B7.3,2x2,0,0,N,N,1008,5,S,White,L,Vinyl,1,4,2,2,0,1,None,N
+506,Y,B3,2x2,0,0,N,N,1047,5,N+CY,White,G,Vinyl,1,7,2,2,0,1,Deck,N
+507,Y,A1,Urban One,0,0,Y,N,647,5,S,White,G,Vinyl,1,2,0,1,0,0,None,N
+508,Y,A4,1x1,0,0,N,N,625,5,N+CY,White,G,Vinyl,1,5,1,1,1,0,Deck,N
+509,Y,B7,2x2,0,0,N,N,1005,5,S,White,L,Vinyl,1,5,2,2,0,1,None,N
+510,N,B6,2x2,0,0,Y,N,1062,5,NE,White,G,Vinyl,0,6,2,2,1,0,None,N
+511,Y,C1,3x2,0,0,N,N,1402,5,SE,White,G,Vinyl,1,8,3,2,0,1,None,N
+521,Y,B4,2x2,0,0,N,N,1222,5,SW,White,G,Vinyl,1,9,2,2,0,1,None,N
+522,Y,B5,2x2,0,0,N,N,886,5,NW,White,G,Vinyl,0,7,2,2,0,1,Deck,N
+524,Y,A5,1x1,0,0,N,N,585,5,N,White,L,Vinyl,0,3,1,1,1,0,None,N
+525,Y,A6,1x1,0,0,N,N,680,5,S+CY,White,L,Vinyl,0,5,1,1,0,0,Deck,N
+526,Y,A7,1x1,0,0,N,N,690,5,N,White,L,Vinyl,1,3,1,1,1,0,None,N
+529,Y,A8,1x1,0,0,N,N,793,5,S+CY,White,G,Vinyl,0,5,1,1,1,0,Deck,N
+530,Y,A9,1x1,0,0,N,N,666,5,N,White,L,Vinyl,1,3,1,1,0,1,None,N
+531,Y,B2,2x2,0,0,N,N,964,5,SE,White,L,Vinyl,0,6,2,2,0,0,None,N
+532,Y,A3,1x1 Den,1,0,N,N,792,5,NE,White,G,Vinyl,1,7,1,1,0,0,Deck,N
+601,Y,B1,2x2,0,0,N,N,978,6,SW,Gray,G,Vinyl,0,5,2,2,1,0,None,Y
+602,Y,A2,1x1,0,0,N,N,722,6,NW,Gray,G,Vinyl,1,6,1,1,1,0,Deck,Y
+605,Y,B7.3,2x2,0,0,N,N,1008,6,S,Gray,L,Vinyl,1,4,2,2,0,1,None,Y
+606,Y,B3,2x2,0,0,N,N,1047,6,N+CY,Gray,G,Vinyl,1,7,2,2,0,1,Deck,Y
+607,Y,A1,Urban One,0,0,Y,N,647,6,S,Gray,G,Vinyl,1,2,0,1,0,0,None,Y
+608,Y,A4,1x1,0,0,N,N,625,6,N+CY,Gray,G,Vinyl,1,9,1,1,1,0,Deck,Y
+609,Y,B7.3,2x2,0,0,N,N,1005,6,S,Gray,L,Vinyl,1,5,2,2,0,1,None,Y
+610,N,B6,2x2,0,0,Y,N,1062,6,NE,Gray,G,Vinyl,0,6,2,2,1,0,None,Y
+611,N,C1,3x2,0,0,N,N,1402,6,SE,Gray,G,Vinyl,1,8,3,2,0,1,None,Y
+621,Y,B4.2,2x2,0,0,N,N,1222,6,SW,Gray,G,Vinyl,1,9,2,2,0,1,None,Y
+622,Y,B5,2x2,0,0,N,N,886,6,NE,Gray,G,Vinyl,0,7,2,2,0,1,Deck,Y
+624,Y,A5,1x1,0,0,N,N,585,6,N,Gray,L,Vinyl,0,3,1,1,1,0,None,Y
+625,Y,A6,1x1,0,0,N,N,680,6,S+CY,Gray,L,Vinyl,0,4,1,1,0,0,Deck,Y
+626,Y,A7,1x1,0,0,N,N,690,6,N,Gray,L,Vinyl,1,3,1,1,1,0,None,Y
+629,Y,A9,1x1,0,0,N,N,793,6,S,Gray,G,Vinyl,0,5,1,1,1,0,Deck,Y
+630,Y,A9,1x1,0,0,N,N,666,6,N,Gray,L,Vinyl,1,3,1,1,0,1,None,Y
+631,Y,B2,2x2,0,0,N,N,964,6,SE,Gray,L,Vinyl,0,6,2,2,0,0,None,Y
+632,Y,A3.2,1x1 Den,1,0,N,N,792,6,NE,Gray,G,Vinyl,1,7,1,1,0,0,Deck,Y
+701,Y,B1.1,2x2,0,0,N,N,797,7,SW,Gray,G,Vinyl,0,9,2,2,1,0,None,Y
+702,Y,A2.1,1x1,0,0,N,N,658,7,NW,Gray,G,Vinyl,1,11,1,1,0,0,Deck,Y
+705,Y,B7.1,2x2,0,0,N,N,953,7,S,Gray,L,Vinyl,1,7,2,2,0,1,None,Y
+706,Y,B3.1,2x2,0,0,N,N,1047,7,N+CY,Gray,G,Vinyl,1,10,2,2,0,1,Deck,Y
+707,Y,A1,Urban One,0,0,N,N,647,7,S,Gray,G,Vinyl,1,4,0,1,0,0,None,Y
+708,Y,A4.1,1x1,0,0,N,N,625,7,N+CY,Gray,G,Vinyl,1,7,1,1,1,0,Deck,Y
+709,Y,B7.1,2x2,0,0,N,N,949,7,S,Gray,L,Vinyl,1,7,2,2,0,1,None,Y
+710,Y,B6.2,2x2,0,0,N,N,983,7,NE,Gray,G,Vinyl,0,9,2,2,1,0,None,Y
+711,N,C1.2,3x2,0,0,N,N,1275,7,SE,Gray,L,Vinyl,1,9,3,2,0,1,None,Y
+721,Y,B4.1,2x2,0,0,N,N,957,7,SW,White,G,Vinyl,0,11,2,2,0,0,None,Y
+722,Y,B5.1,2x2,0,0,N,N,841,7,NW,White,G,Vinyl,0,14,2,2,0,1,Deck,Y
+724,Y,A5.1,1x1,0,0,N,N,563,7,N,White,G,Vinyl,0,5,1,1,1,0,None,Y
+725,Y,A6.2,1x1,0,0,N,N,672,7,S+CY,White,L,Vinyl,0,6,1,1,0,0,Deck,Y
+726,Y,A7.1,1x1,0,0,N,N,650,7,N,White,L,Vinyl,1,6,1,1,1,0,None,Y
+729,Y,A8.1,1x1,0,0,N,N,706,7,S+CY,White,G,Vinyl,0,4,1,1,1,0,Deck,Y
+730,Y,A9.1,1x1,0,0,N,N,588,7,N,White,L,Vinyl,1,7,1,1,0,0,None,Y
+731,Y,B2.1,1x1,0,0,N,N,760,7,SE,White,G,Vinyl,0,9,1,1,0,0,None,Y
+732,N,A3.1,1x1 Den,1,0,N,N,725,7,SW,White,G,Vinyl,1,13,1,1,0,0,Deck,Y

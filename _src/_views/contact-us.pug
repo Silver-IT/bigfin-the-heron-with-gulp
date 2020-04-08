@@ -1,0 +1,38 @@
+extends templates/base.pug
+
+block vars
+	-
+		reserve = false;
+
+block hero
+	+hero('Contact Us', core.url + "/assets/upload/hero/contact-us.jpg")
+		p Reserve Your Spot Today
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content
+			+panel('left-small-space', 'Call Us Today', 'contact-form', ['fade-left', 'fade-right'])
+				p Looking to move into a brand new apartment in downtown Redmond? To schedule a tour or ask any questions, please fill out the form or contact us directly today!
+				p
+					span.c-text__label Contact Info
+					br
+					a(href="mailto:HeronFlatsLofts.PropertyWebsite.Thrive@aptleasing.info") HeronFlatsLofts.PropertyWebsite.Thrive@aptleasing.info
+					br
+					a(href=property.telLink).js-flip-number= property.telText
+				p
+					span.c-text__label Location
+					br
+					|7662 159th Pl. NE
+					br
+					|Redmond, WA
+				
+				br
+									
+				+w3w('#bd8f57', 'small')
+					
+				p
+					span.c-text__label Office Hours
+					br
+					|9:00am-6:00pm Mon - Fri
+					br
+					|10:00am-6:00pm Sat - Sun

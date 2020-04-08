@@ -1,0 +1,62 @@
+//Toolkit
+@import 'toolkit/toolkit';
+
+
+
+//Base
+@import 'base/settings.variables';
+@import 'base/generic.base';
+@import 'base/layout.wrap';
+@import 'base/layout.row';
+
+
+
+//vendors
+@import 'vendor/leaflet';
+@import 'vendor/aos';
+@import 'vendor/magnific-popup';
+
+
+
+//partials
+@import 'partials/component.text';
+@import 'partials/component.btn';
+@import 'partials/component.heading';
+
+//header area
+@import 'partials/component.utility';
+@import 'partials/component.masthead';
+@import 'partials/component.nav';
+
+//home
+@import 'partials/component.home';
+@import 'partials/component.features';
+
+//content area
+@import 'partials/component.hero';
+@import 'partials/component.reserve';
+@import 'partials/component.panel';
+
+//extra ui things
+@import 'partials/component.card';
+@import 'partials/component.leed';
+@import 'partials/component.staff';
+@import 'partials/component.form';
+@import 'partials/component.accord';
+
+//map
+@import 'partials/component.map';
+@import 'partials/component.type';
+
+//footer
+@import 'partials/component.footer';
+
+//choose your home/vue
+@import 'partials/component.vue';
+@import 'partials/component.page';
+@import 'partials/component.filter';
+@import 'partials/component.unit';
+@import 'partials/component.paginate';
+
+
+@import 'partials/shame';

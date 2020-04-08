@@ -1,0 +1,78 @@
+.c-accord {
+	$p: &;
+
+	margin-top: 20px;
+
+	padding-top: 20px;
+
+	border-top: 1px solid m($color, grayLight);
+
+	&[data-state="active"] {
+		dt {
+			&:after {
+				color: rgba( m($color, grayMid), 0.5 );
+
+				transform: rotate(45deg) translate(0, -50%);
+			}
+		}
+		dd {
+			display: block;
+		}
+	}
+	dt {
+		position: relative;
+
+		padding-right: 30px;
+
+		color: m($color, primaryDark);
+
+		font-size: 16px;
+		font-weight: 700;
+
+		cursor: pointer;
+		user-select: none;
+		&:after {
+			position: absolute;
+			top: 50%;
+			right: 0;
+
+			color: m($color, secondary);
+
+			font-family: FontAwesome;
+			font-size: 14px;
+			font-weight: 400;
+
+			content: '\f067';
+
+			transition: 0.25s ease transform;
+			transform: rotate(0deg) translate(0, -50%);
+			transform-origin: 50% 0;
+		}
+		&:hover {
+			color: m($color, primary);
+		}
+	}
+	dd {
+		display: none;
+
+		margin-top: 10px;
+
+		padding-right: 30px;
+
+		line-height: 1.5em;
+		a {
+			display: inline-block;
+
+			color: m($color, primary);
+
+			text-decoration: underline;
+		}
+	}
+	&:first-child {
+		margin-top: 0;
+
+		padding-top: 0;
+
+		border-top: none;
+	}
+}

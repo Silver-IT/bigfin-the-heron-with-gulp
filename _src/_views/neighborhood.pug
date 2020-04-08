@@ -1,0 +1,48 @@
+extends templates/base.pug
+
+block vars
+
+block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js")
+
+block hero
+	+hero('Neighborhood', core.url + "/assets/upload/hero/neighborhood.jpg")
+		p From City Life To Nature - We Have It All
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content
+			+panel('overflow', 'Explore Redmond', false, ['', 'fade-up'])
+				.c-panel__overflow
+					.c-panel__overflow-text.c-text
+						:markdown
+							Spend less time commuting and more time enjoying family, friends and Mother Nature.
+						
+						br
+											
+						+w3w('#bd8f57', 'small')
+					.c-map
+						.c-type
+							.c-type__item.js-map-type(data-type="t0" data-val="all") View All
+							.c-type__item.js-map-type(data-type="t1" data-val="food & drink") Food & Drink
+							.c-type__item.js-map-type(data-type="t2" data-val="grocery") Grocery
+							.c-type__item.js-map-type(data-type="t3" data-val="recreation") Recreation
+							.c-type__item.js-map-type(data-type="t4" data-val="retail, banks & medical") Retail, Bansk & Medical
+							.c-type__item.js-map-type(data-type="t5" data-val="breweries & wineries") Breweries & Wineries
+							.c-type__item.js-map-type(data-type="t6" data-val="parks & trails") Parks & Trails
+						.c-map__wrap
+							.c-map__leaflet#js-map
+			
+			+panel('right', 'Downtown', core.url + "/assets/upload/neighborhood/redmond-town-center.jpg", ['fade-right', 'fade-left'])
+				:markdown
+					Live the downtown lifestyle and explore Redmond downtown and everything it has to offer! You are minutes away from restaurants, cafes, and an assortments of shops right at home. With Redmond Town Center next door as well, you'll find everything you need to experience the lifestyle you deserve.
+			
+			+panel('left', 'Marymoor Park', core.url + "/assets/upload/neighborhood/marymoor-park.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					Nature surrounds you in downtown. The nearby Heron Rookery features an urban forest a new trail that runs through the middle right in your backyard. Leave your car at home and ride the many bike and walking trails that wind through Redmond.
+					
+					Parks & outdoor activities litter the area. And if you're looking for the ultimate outdoor experience nearby, look no further than Marymoor Park. Outdoor movies, concerts, and activities are all available just minutes away!
+		
+	
+
+		

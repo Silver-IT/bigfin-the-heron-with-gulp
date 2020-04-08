@@ -1,0 +1,125 @@
+.c-map {
+	margin-top: 30px;
+
+
+	&__wrap {
+		@include bp( m($bp, tablet) ) {
+			padding-top: 40%;
+		}
+
+		position: relative;
+
+		padding-top: 100%;
+
+		background-color: m($color, grayLight);
+	}
+	&__leaflet {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+	}
+	&__heron {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		color: white;
+
+		font-size: 20px;
+		line-height: 48px;
+
+		text-align: center;
+
+		background-color: m($color, secondary);
+		&:after {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+
+			border: 1px solid white;
+
+			content: '';
+		}
+	}
+	&__marker {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		border-radius: 100%;
+
+		background-color: white;
+		&[data-type="t1"] {
+			background-color: #4d486c;
+		}
+		&[data-type="t2"] {
+			background-color: #859249;
+		}
+		&[data-type="t3"] {
+			background-color: #5ca39f;
+		}
+		&[data-type="t4"] {
+			background-color: #1b4e75;
+		}
+		&[data-type="t5"] {
+			background-color: #a57146;
+		}
+
+		&[data-type="t6"] {
+			background-color: #416a31;
+		}
+	}
+	.leaflet-div-icon {
+		border: none;
+
+		background: none;
+	}
+}
+
+.marker__title {
+	@include bp( m($bp, tablet) ) {
+		font-size: 22px;
+		font-weight: 300;
+	}
+
+	color: m($color, primaryDark);
+
+	font-family: m($font, family, base);
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 0.85em;
+
+	text-align: center;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+.marker__text {
+	@include bp( m($bp, tablet) ) {
+		display: block;
+	}
+
+	display: none;
+
+	margin-top: 5px;
+
+	color: m($color, gray);
+
+	font-family: m($font, family, base);
+
+	text-align: center;
+}
+.leaflet-popup-content-wrapper {
+	border-radius: 0;
+}

@@ -1,0 +1,15 @@
+/**********
+View Width
+
+Helps set view width to a breakpoint.
+Use case: Scale font down at a certain width, best used if you have a desktop font size and want to scale it down throughout mobile
+**********/
+
+//Full breakpoint name available
+@mixin viewwidth( $min-width, $max-width ) {
+	@include vw( $min-width, $max-width );
+}
+
+@function vw( $size, $width ) {
+	@return  $size / ($width * 0.01) + vw;
+}

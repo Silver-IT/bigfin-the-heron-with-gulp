@@ -1,0 +1,43 @@
+extends templates/base.pug
+
+block vars
+
+block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js")
+
+block hero
+	+hero('Gallery', core.url + "/assets/upload/hero/gallery.jpg")
+		p See Yourself Here Today
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content(data-aos="fade-up")
+			.l-row
+				.l-row__third.js-pop-gallery
+					a(href=core.url + "/assets/upload/gallery/i1.jpg").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/interior.jpg')")
+						.c-card__title Interior Gallery
+					.hide
+						- for(var i = 2; i <= 13; i++) {
+							a(href=core.url + "/assets/upload/gallery/i" + i + ".jpg")
+						- }
+				.l-row__third.js-pop-gallery
+					a(href=core.url + "/assets/upload/gallery/e1.jpg").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/exterior.jpg')")
+						.c-card__title Exterior Gallery
+					.hide
+						- for(var i = 2; i <= 6; i++) {
+							a(href=core.url + "/assets/upload/gallery/e" + i + ".jpg")
+						- }
+				.l-row__third.js-pop-gallery
+					a(href=core.url + "/assets/upload/gallery/n1.jpg").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/neighborhood.jpg')")
+						.c-card__title Neighborhood
+					.hide
+						- for(var i = 2; i <= 20; i++) {
+							a(href=core.url + "/assets/upload/gallery/n" + i + ".jpg")
+						- }
+		
+	
+
+		

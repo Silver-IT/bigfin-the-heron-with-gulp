@@ -1,0 +1,72 @@
+.c-nav {
+	@include bp( 0, m($bp ,tablet)) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	@include bp( m($bp ,tablet)) {
+		display: block;
+	}
+
+	display: none;
+
+	@extend %cf;
+	.js-body[data-menu="active"] & {
+		@include bp( 0, m($bp ,tablet)) {
+			position: absolute;
+			top: 70px;
+			left: 0;
+
+			display: block;
+
+			width: 100%;
+		}
+	}
+	&__item {
+		@include bp( 0, m($bp ,tablet)) {
+			margin-top: 15px;
+
+			text-align: center;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		@include bp( m($bp ,tablet)) {
+			float: left;
+
+			margin-right: 18px;
+
+			line-height: 96px;
+		}
+		a {
+			@include bp( 0, m($bp ,tablet)) {
+				font-size: 20px;
+			}
+			@include bp( m($bp ,tablet)) {
+				font-size: 14px;
+			}
+
+			text-transform: uppercase;
+		}
+		&.dHide{
+			@include bp( m($bp, tablet) ){
+				display:none; 
+			}
+			text-align:center;
+			display: table;
+			margin: 20px auto;
+			
+		}
+	}
+	&__split {
+		@include bp( m($bp ,tablet)) {
+			float: left;
+
+			height: 10px;
+
+			margin-top: 45px;
+			margin-right: 20px;
+
+			border-left: 1px solid rgba(white, 0.5);
+		}
+	}
+}

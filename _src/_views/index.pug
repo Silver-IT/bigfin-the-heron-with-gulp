@@ -1,0 +1,66 @@
+extends templates/base.pug
+
+block vars
+
+block hero
+	
+
+block content
+	.c-home.js-home-hero(data-animate="false")
+		.c-home__hero
+			.c-home__img(style="background-image: url('" + core.url + "/assets/upload/home/hero.jpg')")
+			.c-home__text
+				span(style="background-image: url('" + core.url + "/assets/img/logo--bronze.jpg')")
+				strong Brand New Downtown Redmond Apartments
+				em Now Open
+			
+	.l-wrap.l-wrap--padding(style="padding-bottom: 0;" data-aos="fade-up")
+		.l-wrap.l-wrap--content
+			.c-heading.c-heading--no-space Downtown Redmond Living
+			.l-wrap.l-wrap--mini
+				.c-text.c-text--center.c-text--space
+					p Located in the heart of downtown Redmond, the Heron provides you with optimal location and a modern living environment for your lifestyle. Take your pick from 95 brand new homes.
+				a(href=core.url + "/choose-your-home").c-btn.c-btn--space.c-btn--set.c-btn--center.c-btn--secondary Choose Your Home
+	
+	.l-wrap.l-wrap--padding.l-wrap--no-bottom
+		.l-wrap.l-wrap--content
+			+panel('left', 'Benefits', core.url + "/assets/upload/home/features.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					Modern style to fit your every need. You can enjoy keyless entry to your spacious home with ceilings up to 14’. Lap in the luxury of top of the line kitchen features, quartz countertops, full size stainless steel appliances, and ample shelving and storage. Pamper yourself with in-home laundry, and a spa-like bathroom - contemporary comforts at every turn.
+					
+				p: a(href=core.url + "/benefits") View All Benefits
+
+			
+			+panel('right', 'Amenities', core.url + "/assets/upload/home/amenities.jpg", ['fade-right', 'fade-left'])
+				:markdown
+					Enjoy the tranquility in our courtyard nestled among the trees. Our outdoor grill and fire pit are the perfect gathering place to enjoy the sunsets from your own backyard. At night find your way to The Hideaway, where you can enjoy shuffleboard, or host movie-night in our state of the art media lounge.
+				p: a(href=core.url + "/amenities") View All Amenities
+	
+	.l-wrap.l-wrap--padding.hide.hide--mobile
+		.l-wrap.l-wrap--content(data-aos="fade-up")
+			.c-heading Floor Plan Types
+
+			.l-row
+				.l-row__fourth
+					a(href=core.url + "/choose-your-home/#bed-1").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/1-bed.jpg')")
+						.c-card__title 1 Bedroom
+				.l-row__fourth
+					a(href=core.url + "/choose-your-home/#bed-2").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/2-bed.jpg')")
+						.c-card__title 2 Bedroom
+				.l-row__fourth
+					a(href=core.url + "/choose-your-home/#bed-3").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/3-bed.jpg')")
+						.c-card__title 3 Bedroom
+				.l-row__fourth
+					a(href=core.url + "/choose-your-home/#bed-lw").c-card
+						.c-card__img(style="background-image: url('" + core.url + "/assets/upload/card/lofts.jpg')")
+						.c-card__title 1 Bed Lofts
+
+	
+	
+		
+	
+
+		

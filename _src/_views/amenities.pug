@@ -1,0 +1,37 @@
+extends templates/base.pug
+
+block vars
+
+block hero
+	+hero('Amenities', core.url + "/assets/upload/hero/amenities.jpg")
+		p Everything You Could Want - Inside & Out
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content
+			+panel('left', 'Heidrate', core.url + "/assets/upload/amenities/lobby.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					Customize your coffee, tea, sparkling water and cocoa using Heron’s complimentary Scanomat TOPBREWER system conveniently located in our main lobby. In a hurry? This state-of-the-art coffee bar and brewer creates your drink in under 25 seconds!
+			
+			+panel('right', 'The Hinge', core.url + "/assets/upload/amenities/courtyard.jpg", ['fade-right', 'fade-left'])
+				:markdown
+					Community Grill, Dining and Seating area nestled among the trees! Get toasty by our fire pit, and enjoy the Redmond sunset from the comfort of your own backyard! Our tranquil and lush courtyard landscaping is sure to make you feel at peace away from the busy Downtown Redmond!
+			
+			+panel('left', 'The Hideaway', core.url + "/assets/upload/amenities/lounge.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					Chill out with your friends in Heron’s Hideaway! Perfect for your shuffleboard game or host a movie-night with our cozy and luxurious Media Lounge!
+			
+			+panel('right', 'Rack & Pinion', core.url + "/assets/upload/amenities/gym.jpg", ['fade-right', 'fade-left'])
+				:markdown
+					Working out has never been more convenient or cost efficient. Enhance your physical and emotional well-being at the Heron’s very own Rack and Pinion Fitness Center. Residents have free access to our modern facilities featuring: two treadmills, elliptical, rowing machine and a stationary bike.
+			
+			+panel('full', 'And Much More', false, ['', 'fade-up'])
+				.c-panel__grid
+					.c-panel__half.c-text
+						:markdown
+							### Bike Workshop
+							Storage for 50+ bikes. Workshop will include high-end bike stands, comprehensive bike maintenance tools and air pumps.
+		
+	
+
+		

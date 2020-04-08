@@ -1,0 +1,56 @@
+.c-staff {
+	&__img {
+		width: 100%;
+
+		padding-top: 100%;
+
+		background-color: m($color, grayLight);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	&__name {
+		position: relative;
+		left: -0.1em;
+
+		margin-top: 30px;
+		margin-bottom: 5px;
+
+		color: m($color, primary);
+
+		font-size: 32px;
+		font-weight: 300;
+		line-height: 0.85em;
+
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+	&__title {
+		position: relative;
+
+		padding-bottom: 20px;
+
+		font-size: 12px;
+		font-weight: 700;
+
+		text-transform: uppercase;
+
+		&:before {
+			position: absolute;
+			bottom: 0;
+
+			width: 45px;
+			height: 3px;
+
+			content: '';
+
+			background-color: m($color, secondary);
+		}
+	}
+	&__text {
+		margin-top: 20px;
+
+		font-size: 14px;
+		line-height: 1.5em;
+	}
+}

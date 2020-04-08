@@ -1,0 +1,129 @@
+.c-type {
+	@include bp( m($bp, tablet) ) {
+		width: calc(100% - 90px);
+	}
+
+	@extend %cf;
+
+	&__item {
+		@include bp( m($bp, tablet) ) {
+			font-size: 12px;
+		}
+
+		position: relative;
+
+		float: left;
+
+		height: 40px;
+
+		margin-right: 10px;
+		margin-bottom: 10px;
+
+		padding-right: 10px;
+		padding-left: 24px;
+
+		border: 1px solid m($color, grayLight);
+
+		color: m($color, primaryDark);
+
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 38px;
+
+		text-transform: uppercase;
+
+		cursor: pointer;
+		&:before {
+			position: absolute;
+			top: 14px;
+			left: 10px;
+
+			width: 9px;
+			height: 9px;
+
+			border-radius: 100%;
+
+			content: '';
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		&[data-type="t0"] {
+			&:before {
+				background-color: m($color, primaryDark);
+			}
+		}
+		&[data-type="t1"] {
+			&:before {
+				background-color: #4d486c;
+			}
+		}
+		&[data-type="t2"] {
+			&:before {
+				background-color: #859249;
+			}
+		}
+		&[data-type="t3"] {
+			&:before {
+				background-color: #5ca39f;
+			}
+		}
+		&[data-type="t4"] {
+			&:before {
+				background-color: #1b4e75;
+			}
+		}
+		&[data-type="t5"] {
+			&:before {
+				background-color: #a57146;
+			}
+		}
+		&[data-type="t6"] {
+			&:before {
+				background-color: #416a31;
+			}
+		}
+
+		&[data-state="active"] {
+			color: white;
+			&:before {
+				background-color: white;
+			}
+			&[data-type="t0"] {
+				border-color: m($color, primaryDark);
+
+				background-color: m($color, primaryDark);
+			}
+			&[data-type="t1"] {
+				border-color: #4d486c;
+
+				background-color: #4d486c;
+			}
+			&[data-type="t2"] {
+				border-color: #859249;
+
+				background-color: #859249;
+			}
+			&[data-type="t3"] {
+				border-color: #5ca39f;
+
+				background-color: #5ca39f;
+			}
+			&[data-type="t4"] {
+				border-color: #1b4e75;
+
+				background-color: #1b4e75;
+			}
+			&[data-type="t5"] {
+				border-color: #a57146;
+
+				background-color: #a57146;
+			}
+			&[data-type="t6"] {
+				border-color: #416a31;
+
+				background-color: #416a31;
+			}
+		}
+	}
+}

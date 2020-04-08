@@ -1,0 +1,32 @@
+//-
+	Open Graph
+	Source: https://blog.kissmetrics.com/open-graph-meta-tags/
+	
+	For best social media support and rich media content. Visit (http://ogp.me/#types) to see other types of open graph to use.
+	
+	Note:
+	Only supports website type at the moment, so this is just a very basic implementation at the moment...
+
+//Open Graph
+meta(property="og:type" content=core.og.type)
+
+
+//- Title
+- if(core.og.title == false)
+	meta(property="og:title" content=core.title)
+- else
+	meta(property="og:title" content=core.og.title)
+
+
+//- Description
+- if(core.og.description == false)
+	meta(property="og:description" content=core.description)
+- else
+	meta(property="og:description" content=core.og.description)
+
+
+//- Other
+meta(property="og:url" content=core.canonical)
+meta(property="og:locale" content=core.locale)
+meta(property="og:site_name" content=core.site_name)
+	

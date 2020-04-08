@@ -1,0 +1,187 @@
+extends ../core/_core.pug
+
+include ../partials/_mixins.pug
+
+//----------------------------------------------
+	Data - Set global data and project defaults.
+block core_data
+	-
+		core.robots = true;
+		core.url = "https://www.liveatheron.com";
+		core.title = "The Heron Flats + Lofts";
+		core.description = "Luxury Apartments for Rent Redmond, WA - Heron Flats + Lofts";
+		
+		var reserve = true;
+		var property = {
+			telLink : "tel:+14252968462",
+			telText : "(425) 296-8462",
+			
+			directions: "https://www.google.com/maps/dir//7662+159th+Pl+NE,+Redmond,+WA+98052",
+			
+			emailText: "heron-w@m.knck.io",
+			emailLink: "mailto:heron-w@m.knck.io"
+		}
+		
+		//- w3w Configuration
+		var w3w = {};
+		w3w.address = 'pages.frames.oasis';
+		
+	block vars
+
+
+
+//----------------------------------------------
+	Head - Inject content in the core_head.
+block core_head
+	link(rel="icon" href=core.url + "/assets/img/favicon.png")
+	link(rel="apple-touch-icon-precomposed" href=core.url + "/assets/img/favicon-152.png")
+		
+	link(href=core.url + "/assets/css/main.min.css" rel="stylesheet" type="text/css")
+		
+	link(href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet")
+	link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css")
+	
+	block head
+	
+	script
+		|var baseURL = "#{core.url}";
+		|var apartmentData = "#{core.url}/assets/data/apartments.json";
+	
+	include ../html/analytics.html
+
+
+//----------------------------------------------
+	Body - This is where all the content really goes.
+block core_body
+	// Google Tag Manager (noscript) added 3/25/2019
+	noscript
+		iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-KDH2XJL' height='0' width='0' style='display:none;visibility:hidden')
+	// End Google Tag Manager (noscript)
+
+	.l-wrap.l-wrap--max.js-body
+		.c-utility
+			.c-utility__left
+				a(href=property.telLink).c-utility__item.js-flip-tel
+					.c-utility__label
+						strong: i.fa.fa-phone
+						em Call Today
+					.c-utility__info.js-flip-tel-text= property.telText
+				
+				a(href=property.directions).c-utility__item
+					.c-utility__label
+						strong: i.fa.fa-map-marker
+						em Location
+					.c-utility__info 7662 159th Pl NE - Redmond
+				
+				.c-utility__item
+					.c-utility__label
+						strong: i.fa.fa-clock-o
+						em Hours
+					.c-utility__info 9:00am-6pm Mon - Fri, 10:00am-6pm Sat - Sun
+			
+			.c-utility__right
+				a(href="https://thrivecommunities.securecafe.com/residentservices/heron-flats-lofts/userlogin.aspx" target="_blank").c-utility__link
+					.c-utility__label
+						strong: i.fa.fa-user
+						em Resident Portal
+				a(href=core.url + "/choose-your-home").c-utility__link
+					.c-utility__label
+						strong: i.fa.fa-search
+						em Home Search
+				a(href onclick="event.preventDefault(); knockDoorway.openScheduling();").c-utility__link
+					.c-utility__label
+						strong: i.fa.fa-map-signs
+						em Schedule Tour
+				a(href="https://www.on-site.com/apply/property/231597" target="_blank").c-utility__cta
+					em Availability
+					strong: i.fa.fa-arrow-right
+				
+		
+		.c-masthead
+			a(href=core.url + "/").c-masthead__logo The Heron Flats + Lofts
+			.c-masthead__nav.c-nav
+				.c-nav__item
+					a(href=core.url + "/choose-your-home") Choose Your Home
+				.c-nav__split
+				.c-nav__item
+					a(href=core.url + "/benefits") Benefits
+				.c-nav__item
+					a(href=core.url + "/amenities") Amenities
+				.c-nav__item
+					a(href=core.url + "/neighborhood") Neighborhood
+				.c-nav__split
+				.c-nav__item
+					a(href=core.url + "/sustainability") Sustainability
+				.c-nav__item
+					a(href=core.url + "/gallery") Gallery
+				.c-nav__item
+					a(href=core.url + "/faqs") FAQs
+				.c-nav__split
+				.c-nav__item
+					a(href=core.url + "/contact-us") Contact Us
+				
+				.c-nav__item.dHide
+					a(href onclick="event.preventDefault(); knockDoorway.openScheduling();").c-utility__link
+						.c-utility__label
+							strong: i.fa.fa-map-signs
+							em Schedule Tour
+				.c-nav__item.dHide
+					a(href="https://www.on-site.com/apply/property/231597" target="_blank").c-utility__cta
+						em Availability
+						strong: i.fa.fa-arrow-right
+					
+			.c-masthead__right
+				a(href=property.directions).c-masthead__item
+					i.fa.fa-map-marker
+				a(href=property.telLink).c-masthead__item
+					i.fa.fa-phone
+				.c-masthead__item.js-menu
+					i.fa.fa-bars
+		
+		block hero
+		
+		block content
+		
+		- if(reserve == true) {
+			.c-reserve(data-aos="fade-up")
+				.l-wrap.l-wrap--content
+					.c-reserve__logo(style="background-image: url('" + core.url + "/assets/img/logo--white.png')")
+					h1.c-reserve__title Reserve #[span Your Spot]
+					.c-reserve__content
+						a(href onclick="event.preventDefault(); knockDoorway.openScheduling();").c-btn.c-btn--space.c-btn--set.c-btn--center.c-btn--secondary Schedule A Tour
+				.c-reserve__img(style="background-image: url('" + core.url + "/assets/upload/hero/reserve.jpg');")
+		- }
+		
+		.l-wrap.l-wrap--padding.c-footer
+			.l-wrap.l-wrap--content
+				ul.c-footer__social
+					li: a(href="https://www.facebook.com/liveatheron/" target="_blank"): i.fa.fa-facebook
+					li: a(href="https://www.instagram.com/liveatheron/" target="_blank"): i.fa.fa-instagram
+					
+				ul.c-footer__contact
+					li: a(href=property.telLink).js-flip-number= property.telText
+					li: a(href=property.directions target="_blank").js-link-map 7662 159th Pl NE - Redmond
+					li: +w3w('white', 'small')
+					li &nbsp;
+					li: a(href=core.url + "/assets/img/heron-brochure.jpg" download) Download Brochure
+				
+				.c-footer__messages
+					p We accept Comprehensive Reusable Tenant Screening Reports, however, applicant approval is subject to Thrive's screening criteria. 
+				
+				ul.c-footer__colophon
+					li &copy; 2020. All rights reserved.
+					li Professionally Managed by #[a(href="http://www.thrivecommunities.com/" target="_blank") Thrive Communities]
+					li #[a(href="#") Sitemap]
+		
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+		
+		block scripts
+		
+		script(src=core.url + '/assets/js/main.min.js')
+		//-Knock Rentals scripts
+		script(type='text/javascript', src='https://doorway.knck.io/latest/doorway.min.js')
+		script(text='text/javascript').
+			window.knockDoorway.init('UjhNV1Q4Q1hKMklTNDhZSTpCN09ONFlGNU9NWVA5T0VT', 'community', '362f11e972cd4b56');
+		
+		
+		//include ../html/flipNumber.html

@@ -1,0 +1,509 @@
+.c-form {
+	@extend %cf;
+	&__submit {
+		display: block;
+		clear: both;
+
+		width: 100%;
+		height: 60px;
+
+		outline: 0;
+
+		color: white;
+
+		font-family: m($font, family, base);
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 60px;
+
+		text-align: center;
+		text-transform: uppercase;
+
+		cursor: pointer;
+
+		background-color: m($color, secondary);
+		&:hover {
+			background-color: m($color, secondaryDark);
+		}
+	}
+}
+
+$fieldPadding: 10px;
+$fieldHeight: 40px;
+$fieldColor: #666666;
+$fieldRadius: 0;
+
+%fieldBase {
+	height: $fieldHeight;
+
+	border: 1px solid m($color, gray2);
+
+	font-family: m($font, family, base);
+	font-size: 16px;
+	&:hover {
+		border-color: #aaaaaa;
+	}
+	&:focus {
+		border-color: m($color, secondary);
+	}
+}
+
+%fieldCheckbox {
+	position: relative;
+
+	margin-top: 5px;
+
+	padding-left: 30px;
+
+	font-family: m($font, family, base);
+	line-height: 22px;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:hover {
+		&:before {
+			border-color: #aaaaaa;
+		}
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 20px;
+		height: 20px;
+
+		border: 1px solid m($color, gray2);
+		border-radius: $fieldRadius;
+
+		color: white;
+
+		font-size: 12px;
+		line-height: 18px;
+
+		text-align: center;
+
+		content: '';
+	}
+}
+
+%fieldCheckboxChecked {
+	&:before {
+		border-color: m($color, secondary);
+
+		background-color: m($color, secondary);
+	}
+}
+
+%fieldRadio {
+	position: relative;
+
+	margin-top: 5px;
+
+	padding-left: 30px;
+
+	font-family: m($font, family, base);
+	line-height: 22px;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:hover {
+		&:before {
+			border-color: #aaaaaa;
+		}
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 18px;
+		height: 18px;
+
+		border: 1px solid #dddddd;
+		border-radius: 100%;
+
+		color: m($color, primary);
+
+		font-size: 31px;
+		line-height: 18px;
+
+		text-align: center;
+
+		content: '';
+	}
+	&:hover {
+		border-color: #aaaaaa;
+	}
+}
+
+%fieldRadioChecked {
+	&:before {
+		border-color: m($color, primary);
+
+		background-color: m($color, primary);
+	}
+}
+
+
+
+
+.c-form {
+	//custom
+	.field {
+		float: left;
+
+		width: 100%;
+
+		margin-bottom: 20px;
+		&__label {
+			display: block;
+
+			padding-bottom: 5px;
+
+			color: #333333;
+
+			font-family: m($font, family, base);
+			font-size: 12px;
+			font-weight: 700;
+
+			text-transform: uppercase;
+		}
+		&--left {
+			@include bp( m($bp, small) ) {
+				float: left;
+
+				width: calc(50% - 10px);
+			}
+
+			width: 100%;
+		}
+		&--right {
+			@include bp( m($bp, small) ) {
+				float: right;
+
+				width: calc(50% - 10px);
+			}
+
+			width: 100%;
+		}
+	}
+
+
+
+	//preset
+	.field {
+		input, button, textarea, select, label {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		input, button, textarea, select {
+			display: block;
+
+			box-sizing: border-box;
+
+			border-radius: $fieldRadius;
+			outline: 0;
+
+			color: inherit;
+
+			appearance: none;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			display: none;
+		}
+		&__input, &__textarea, &__select, &__radio, &__checkbox {
+			position: relative;
+
+			display: block;
+
+			color: $fieldColor;
+		}
+		&__input {
+			input {
+				width: 100%;
+
+				padding-right: $fieldPadding;
+				padding-left: $fieldPadding;
+
+				@extend %fieldBase;
+			}
+		}
+		&__textarea {
+			textarea {
+				width: 100%;
+				min-width: 100%;
+				max-width: 100%;
+				height: $fieldHeight * 4;
+				min-height: $fieldHeight * 2;
+
+				padding: $fieldPadding;
+
+				line-height: 1.5em;
+
+				@extend %fieldBase;
+			}
+		}
+		&__select {
+			select {
+				width: 100%;
+
+				padding-right: $fieldPadding;
+				padding-left: $fieldPadding;
+
+				cursor: pointer;
+
+				@extend %fieldBase;
+				&:-moz-focusring {
+					color: transparent;
+
+					text-shadow: 0 0 0 $fieldColor;
+				}
+			}
+			&:after {
+				position: absolute;
+				top: 0;
+				right: $fieldPadding;
+
+				height: $fieldHeight;
+
+				font-family: FontAwesome;
+				font-size: 12px;
+				line-height: $fieldHeight;
+
+				pointer-events: none;
+
+				content: '\f0dc';
+			}
+		}
+		&__checkbox {
+			& > label, & > span {
+				display: inline-block;
+
+				cursor: pointer;
+
+				@extend %fieldCheckbox;
+			}
+			input[type="checkbox"]:checked + label, input[type="checkbox"]:checked + span {
+				cursor: pointer;
+
+				@extend %fieldCheckboxChecked;
+			}
+		}
+		&__radio {
+			& > label, & > span {
+				display: inline-block;
+
+				cursor: pointer;
+
+				@extend %fieldRadio;
+			}
+			input[type="radio"]:checked + label, input[type="radio"]:checked + span {
+				cursor: pointer;
+
+				@extend %fieldRadioChecked;
+			}
+		}
+	}
+}
+
+
+
+.c-form--main {
+	form {
+		position: relative;
+		z-index: 100;
+
+		margin-top: 20px;
+	}
+	//custom
+	.field {
+		float: left;
+
+		width: 100%;
+
+		margin-bottom: 20px;
+		&__label {
+			@include bp( m($bp, tablet) ) {
+				color: white;
+			}
+
+			display: block;
+
+			padding-bottom: 5px;
+
+			color: m($color, black);
+
+			font-family: m($font, family, base);
+			font-size: 12px;
+			font-weight: 700;
+
+			text-transform: uppercase;
+		}
+	}
+
+
+
+	//preset
+	.field {
+		&--left {
+			width: calc(50% - 10px);
+			.c-page__form & {
+				width: 100%;
+			}
+		}
+		&--right {
+			float: right;
+
+			width: calc(50% - 10px);
+
+			.c-page__form & {
+				width: 100%;
+			}
+		}
+		input, button, textarea, select, label {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		input, button, textarea, select {
+			@include bp( m($bp, tablet) ) {
+				color: white;
+			}
+
+			display: block;
+
+			box-sizing: border-box;
+
+			border-radius: $fieldRadius;
+			outline: 0;
+
+			color: inherit;
+
+			appearance: none;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			display: none;
+		}
+		&__input, &__textarea, &__select, &__radio, &__checkbox {
+			position: relative;
+
+			display: block;
+
+			color: $fieldColor;
+		}
+		&__input {
+			input {
+				width: 100%;
+
+				padding-right: $fieldPadding;
+				padding-left: $fieldPadding;
+
+				@extend %fieldBase;
+			}
+		}
+		&__textarea {
+			textarea {
+				width: 100%;
+				min-width: 100%;
+				max-width: 100%;
+				height: $fieldHeight * 4;
+				min-height: $fieldHeight * 2;
+
+				padding: $fieldPadding;
+
+				line-height: 1.5em;
+
+				@extend %fieldBase;
+			}
+		}
+		&__select {
+			select {
+				width: 100%;
+
+				padding-right: $fieldPadding;
+				padding-left: $fieldPadding;
+
+				cursor: pointer;
+
+				@extend %fieldBase;
+				&:-moz-focusring {
+					color: transparent;
+
+					text-shadow: 0 0 0 $fieldColor;
+				}
+			}
+			&:after {
+				@include bp( m($bp, tablet) ) {
+					color: white;
+				}
+
+				position: absolute;
+				top: 0;
+				right: $fieldPadding;
+
+				height: $fieldHeight;
+
+				font-family: FontAwesome;
+				font-size: 12px;
+				line-height: $fieldHeight;
+
+				pointer-events: none;
+
+				content: '\f0dc';
+			}
+		}
+		&__checkbox {
+			& > label, & > span {
+				@include bp( m($bp, tablet) ) {
+					color: white;
+
+					&:before {
+						border-color: white;
+					}
+				}
+
+				display: inline-block;
+
+				cursor: pointer;
+
+				@extend %fieldCheckbox;
+
+				&:before {
+					border-color: m($color, primaryDark);
+					border-color: white;
+				}
+			}
+			input[type="checkbox"]:checked + label, input[type="checkbox"]:checked + span {
+				cursor: pointer;
+
+				@extend %fieldCheckboxChecked;
+			}
+		}
+		&__radio {
+			& > label, & > span {
+				display: inline-block;
+
+				cursor: pointer;
+
+				@extend %fieldRadio;
+			}
+			input[type="radio"]:checked + label, input[type="radio"]:checked + span {
+				cursor: pointer;
+
+				@extend %fieldRadioChecked;
+			}
+		}
+	}
+}
+
+.field {
+	&__required {
+		color: m($color, secondary);
+	}
+	&__error {
+		border-color: m($color, secondary) !important;
+	}
+	&--hidden {
+		display: none;
+	}
+}

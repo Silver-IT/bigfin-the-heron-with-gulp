@@ -1,0 +1,40 @@
+.c-heading {
+	@include bp( m($bp, mobile)) {
+		text-align: center;
+	}
+	@include bp( m($bp, tablet) ) {
+		margin-bottom: 60px;
+
+		font-size: 42px;
+	}
+	@include bp( m($bp, desktop) ) {
+		margin-bottom: 90px;
+	}
+
+	margin-bottom: 40px;
+
+	color: m($color, primaryDark);
+
+	font-size: 28px;
+	font-weight: 300;
+	line-height: 0.85em;
+
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	&--sub {
+		margin-top: 30px;
+		margin-top: 30px;
+
+		font-size: 22px;
+		font-weight: 300;
+
+		text-transform: none;
+	}
+	&--no-space {
+		margin-bottom: 0;
+	}
+
+	&--white {
+		color: white;
+	}
+}

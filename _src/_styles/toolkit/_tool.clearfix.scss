@@ -1,0 +1,15 @@
+/**********
+Clearfix
+
+Cleans up floats
+For more ideas: https://css-tricks.com/snippets/css/clear-fix/
+**********/
+
+%cf, %clearfix {
+	&:after {
+		display: table;
+		clear: both;
+
+		content: "";
+	}
+}

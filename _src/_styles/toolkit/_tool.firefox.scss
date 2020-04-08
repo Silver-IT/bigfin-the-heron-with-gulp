@@ -1,0 +1,11 @@
+/**********
+Firefox
+
+Target Firefox specifically for your styles
+**********/
+
+@mixin firefox() {
+	@-moz-document url-prefix() {
+		@content
+	}
+}

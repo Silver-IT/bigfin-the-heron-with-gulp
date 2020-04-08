@@ -1,0 +1,80 @@
+extends templates/base.pug
+
+block vars
+
+block hero
+	+hero('Sustainability', core.url + "/assets/upload/hero/sustainability.jpg")
+		p Thoughtful Design At Every Turn
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content
+			+panel('full', 'LEED Amenities & Options', false, ['', 'fade-up'])
+				.c-panel__grid
+					.c-panel__half.c-text
+						:markdown
+							- High Water-Efficiency in bathroom sinks, toilets, showers, kitchen sink and appliances.
+							- LED lighting throughout the building, and in each home.
+							- Carbon Monoxide monitor in each home.
+							- Multiple Zones for heating system – one thermostat in each room reduces energy costs and creates a more efficient living space.
+							- Double-pane windows to enhance temperature control.
+							- Use of natural cleaners in homes and in common areas.
+							- Hard-surface flooring in all home living areas to reduce the amount of air pollutants and cleaning costs.
+					.c-panel__half.c-text
+						:markdown
+							- Home insulation and flooring are 3rd party certified as low-emission and safe for families.
+							- Home materials (paint, coating, sealants, adhesives, etc…) are Low VOC (Volatile Organic Compounds), creating a healthy living space for all residents.
+							- Ventilation system filters air pollutants directly outside, creating no build-up of moisture or cooking oils, and a home full of fresh air.
+							- Energy Star appliances which results in lower electric bills for residents.
+							- An Abundance of natural light in all residences because of expansive windows.
+	
+	.l-wrap.l-wrap--padding.l-wrap--gray(data-aos="fade-up")
+		.l-wrap.l-wrap--content
+			.c-leed
+				.c-leed__main
+					.c-leed__title.c-leed__title--main
+						strong.c-leed__logo LEED Platinum
+						|LEED Platinum Certified
+					.c-leed__text.c-text
+						:markdown
+							Leadership in Energy and Environmental Design (LEED) is a rating system that promotes the design and construction of high‐performance green homes, including affordable housing, custom designs, and urban apartments and lofts in historic buildings.
+							
+							With LEED Certification, the Heron enables residents to enjoy an outstanding location, excellent amenities, transportation connectivity and built‐in green features and benefits.
+						.c-leed__disclaimer The ‘LEED for Homes’ Logo is a registered trademark owned by the U.S. Green Building Council and is used with permission.
+				.c-leed__item
+					.c-leed__title.c-leed__title--mini
+						.c-leed__icon
+							.c-leed__img(style="background-image: url('" + core.url + "/assets/upload/icon/health.png');")
+						|Health
+					.c-leed__text.c-text
+						:markdown
+							LEED-certified homes are designed to optimize fresh air indoors and minimize exposure to airborne toxins and pollutants.
+				.c-leed__item
+					.c-leed__title.c-leed__title--mini
+						.c-leed__icon
+							.c-leed__img(style="background-image: url('" + core.url + "/assets/upload/icon/savings.png');")
+						|Savings
+					.c-leed__text.c-text
+						:markdown
+							On average, LEED-certified homes use 20 to 30% less energy and water than a home built to code. Using fewer resources means lower utility bills each month.
+				.c-leed__item
+					.c-leed__title.c-leed__title--mini
+						.c-leed__icon
+							.c-leed__img(style="background-image: url('" + core.url + "/assets/upload/icon/trust.png');")
+						|Trust
+					.c-leed__text.c-text
+						:markdown
+							LEED-certified homes are third-party inspected performance tested, and certified to perform better than a conventional home.
+					
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--content
+			+panel('left', 'Platinum Features', core.url + "/assets/upload/sustainability/platinum.jpg", ['fade-left', 'fade-right'])
+				:markdown
+					- Air Conditioning and Heat Pump System (6th, 7th and Live/Work)
+					- Lighting Controls/Occupancy Sensors at Garage and Corridors
+					- Dual Flush Toilets
+					- Shoe Removal Stations at Entry 
+					- Locally sourced building materials. 
+					- Drought tolerant landscaping 
+					- Natural storm-water infiltration system 
+	

@@ -1,0 +1,93 @@
+.c-utility {
+	@include bp( m($bp, tablet)) {
+		display: block;
+	}
+
+	position: relative;
+	z-index: 300;
+
+	display: none;
+
+	height: 40px;
+
+	color: white;
+
+	background-color: m($color, black);
+
+	@extend %cf;
+	&__left {
+		float: left;
+
+		@extend %cf;
+	}
+	&__right {
+		float: right;
+
+		@extend %cf;
+	}
+	&__item, &__link, &__cta {
+		display: block;
+		float: left;
+
+		margin-left: 20px;
+
+		font-size: 12px;
+		line-height: 40px;
+
+		@extend %cf;
+	}
+	&__item {
+		&:last-child {
+			@include bp( m($bp, desktop)) {
+				display: block;
+			}
+
+			display: none;
+		}
+	}
+	&__link {
+		margin-right: 20px;
+		margin-left: 0;
+	}
+
+	&__cta {
+		margin-left: 0;
+
+		padding-right: 20px;
+		padding-left: 20px;
+
+		background-color: m($color, secondary);
+
+		em {
+			font-weight: 700;
+
+			text-transform: uppercase;
+		}
+		strong {
+			margin-left: 4px;
+
+			font-weight: 400;
+		}
+	}
+
+	&__label {
+		float: left;
+
+		font-weight: 700;
+
+		text-transform: uppercase;
+
+		strong {
+			margin-right: 4px;
+
+			color: m($color, secondary);
+
+			font-weight: 400;
+		}
+	}
+	&__info {
+		float: left;
+
+		margin-left: 4px;
+	}
+}

@@ -1,0 +1,128 @@
+.c-leed {
+	@extend %cf;
+	&__main {
+		@include bp(0, m($bp, desktop) ) {
+			padding-bottom: 40px;
+
+			border-bottom: 1px solid rgba(black, 0.15);
+		}
+		@include bp( m($bp, desktop) ) {
+			float: left;
+
+			width: calc(100% - 735px);
+		}
+
+		width: 100%;
+	}
+	&__logo {
+		@include bp( m($bp, tablet) ) {
+			width: 100px;
+			height: 100px;
+		}
+
+		position: absolute;
+		top: 10px;
+		left: 0;
+
+		overflow: hidden;
+
+		width: 80px;
+		height: 80px;
+
+		text-indent: -200%;
+
+		background-image: url('../upload/sustainability/leed.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	&__icon {
+		position: relative;
+
+		width: 50px;
+		height: 50px;
+
+		margin-bottom: 13px;
+	}
+	&__img {
+		position: absolute;
+		top: -25%;
+		left: -25%;
+
+		width: 150%;
+		height: 150%;
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	&__title {
+		margin-bottom: 20px;
+
+		color: m($color, primary);
+
+		font-weight: 300;
+		line-height: 0.85em;
+
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		&--main {
+			@include bp( 0, m($bp, tablet) ) {
+				padding-top: 110px;
+
+				font-size: 30px;
+			}
+			@include bp( m($bp, tablet) ) {
+				height: 120px;
+
+				padding-top: 24px;
+				padding-left: 120px;
+
+				font-size: 42px;
+			}
+
+			position: relative;
+			top: -0.08em;
+			left: -0.11em;
+
+			max-width: 680px;
+		}
+		&--mini {
+			@include bp( m($bp, desktop) ) {
+				height: 120px;
+			}
+			@include bp( m($bp, tablet) ) {
+				font-size: 32px;
+			}
+
+			font-size: 26px;
+		}
+	}
+	&__item {
+		@include bp( 0, m($bp, mobile) ) {
+			width: 100%;
+
+			margin-top: 40px;
+		}
+		@include bp( m($bp, mobile), m($bp, desktop) ) {
+			float: left;
+
+			width: calc(33.3% - 45px);
+
+			margin-top: 40px;
+			margin-right: 45px;
+		}
+		@include bp( m($bp, desktop) ) {
+			float: left;
+
+			width: 200px;
+
+			margin-left: 45px;
+		}
+	}
+	&__disclaimer {
+		margin-top: 30px;
+
+		font-size: 14px;
+	}
+}

@@ -1,0 +1,92 @@
+.c-footer {
+	//border-top: 3px solid m($color, secondary);
+
+	color: white;
+
+	text-align: center;
+
+	background-color: m($color, black);
+
+	&__split {
+		width: 100%;
+		height: 1px;
+
+		margin-top: 40px;
+		margin-bottom: 40px;
+
+		background-color: rgba( white, 0.25 );
+	}
+	&__social {
+		@include bp( m($bp, tablet) ) {
+			font-size: 32px;
+		}
+
+		font-size: 24px;
+		li {
+			display: inline-block;
+
+			margin-left: 20px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	&__messages {
+		margin-top: 40px;
+
+		font-size: 14px;
+		line-height: 1.25em;
+	}
+	&__colophon {
+		margin-top: 20px;
+
+		text-align: center;
+
+		@extend %cf;
+		li {
+			@include bp( m($bp, tablet) ) {
+				display: inline-block;
+
+				margin-left: 20px;
+			}
+
+			display: block;
+
+			margin-top: 20px;
+
+			color: rgba(white, 0.65);
+
+			font-size: 12px;
+			&:first-child {
+				margin-left: 0;
+			}
+			a {
+				text-decoration: underline;
+			}
+		}
+		&:after {
+			display: block;
+
+			width: 30px;
+			height: 30px;
+
+			margin-top: 40px;
+			margin-right: auto;
+			margin-left: auto;
+
+			background-image: url('../img/eho.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+	&__contact {
+		margin-top: 40px;
+		li {
+			margin-top: 10px;
+		}
+		a {
+			text-decoration: underline;
+		}
+	}
+}

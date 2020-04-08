@@ -1,0 +1,84 @@
+.c-card {
+	$p: &;
+
+	display: block;
+
+	backface-visibility: hidden;
+	&:hover {
+		#{$p}__img {
+			filter: contrast(1) grayscale(0.15);
+			&:after {
+				opacity: 1;
+
+				transform: scale(1) translate3d(0,0,0);
+			}
+		}
+	}
+	&__img {
+		@include bp( m($bp, tablet) ) {
+			padding-top: 100%;
+		}
+
+		position: relative;
+
+		width: 100%;
+
+		padding-top: 40%;
+
+		background-color: m($color, grayLight);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		transition: filter 0.25s ease;
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 20;
+
+			opacity: 0;
+
+			width: 100%;
+			height: 100%;
+
+			content: '';
+
+			background-color: rgba(m($color, primaryDark), 0.75);
+
+			transition: opacity 0.25s ease, transform 0.25s ease;
+			transform: scale(0.9) translate3d(0,0,0);
+
+			backface-visibility: hidden;
+		}
+	}
+	&__title {
+		position: relative;
+		z-index: 100;
+
+		margin-top: 30px;
+
+		padding-left: 50px;
+
+		color: m($color, primary);
+
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 0.85em;
+
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 30px;
+
+			width: 3px;
+			height: 90px;
+
+			content: '';
+
+			background-color: m($color, secondary);
+		}
+	}
+}

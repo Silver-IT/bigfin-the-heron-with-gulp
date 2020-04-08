@@ -1,0 +1,154 @@
+.c-home {
+	position: relative;
+	&__hero {
+		@include bp( 0, m($bp, tablet) ) {
+			height: 320px;
+		}
+		@include bp( m($bp, tablet) ) {
+			padding-top: 40%;
+		}
+
+		position: relative;
+
+		width: 100%;
+	}
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+
+		width: 100%;
+		height: calc(100% + 100px);
+
+		background-color: m($color, primaryDark);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		filter: contrast(1.35) grayscale(0.15);
+		&:after {
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+
+			content: '';
+
+			background-color: rgba(m($color, primaryDark), 0.65);
+		}
+	}
+
+	&__title {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: 100;
+
+		width: 100%;
+
+		color: white;
+
+		font-size: 100px;
+		font-weight: 300;
+
+		text-align: center;
+		text-transform: uppercase;
+		text-shadow: 0 5px 20px rgba(m($color, primaryDark), 0.85);
+
+		transform: translate(0, -50%);
+	}
+	&__text {
+		@include bp( m($bp, tablet) ) {
+			transform: translate(0, -50%);
+		}
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: 100;
+
+		width: 100%;
+
+		transform: translate(0, -50%);
+		strong, em {
+			@include bp( m($bp, tablet) ) {
+				display: block;
+			}
+
+			display: none;
+
+			color: white;
+
+			text-align: center;
+		}
+		strong {
+			margin-top: 40px;
+
+			color: white;
+
+			font-size: 30px;
+			font-weight: 300;
+			line-height: 0.85em;
+
+			text-align: center;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		em {
+			position: relative;
+			left: 0.05em;
+
+			margin-top: 15px;
+
+			color: white;
+
+			font-size: 137px;
+			//font-size: 80px;
+			font-weight: 700;
+			line-height: 0.85em;
+
+			text-align: center;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		span {
+			display: block;
+
+			width: 100%;
+			height: 160px;
+
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+
+	&[data-animate="false"] {
+		.c-home__text {
+			strong, em, span {
+				opacity: 0;
+
+				transform: translate3d(0, 40px, 0);
+			}
+		}
+	}
+	&[data-animate="true"] {
+		.c-home__text {
+			strong, em, span {
+				opacity: 1;
+
+				transform: translate3d(0, 0, 0);
+			}
+			span {
+				transition: 0.5s 0.25s ease opacity, 0.5s 0.25s ease transform;
+			}
+			strong {
+				transition: 0.5s 0.5s ease opacity, 0.5s 0.5s ease transform;
+			}
+			em {
+				transition: 0.5s 0.75s ease opacity, 0.5s 0.75s ease transform;
+			}
+		}
+	}
+}

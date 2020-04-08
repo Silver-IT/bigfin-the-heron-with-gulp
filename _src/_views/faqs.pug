@@ -1,0 +1,73 @@
+extends templates/base.pug
+
+block vars
+
+block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js")
+
+block hero
+	+hero('FAQs', core.url + "/assets/upload/hero/faqs.jpg")
+		p See Yourself Here Today
+
+block content
+	.l-wrap.l-wrap--padding
+		.l-wrap.l-wrap--mid
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt When can I tour Heron?
+				dd The Heron Team is available for tours Monday-Friday 9:00am-6:00pm, and Saturday & Sunday 10:00am-6:00pm.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt How do I know which homes are available?
+				dd On our #[a(href=core.url + "/choose-your-home") Choose Your Home] page, any of the homes you can view are currently available!  If, for some reason, a specific home is not available but is something you are interested in, let us know so that we can find you something comparable.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt How long does it take to receive approval of my application?
+				dd Our screening company is fast and efficient.  Typically, an application can be processed between 24 to 48 hours. Schedule a tour now!
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt When can I move in?
+				dd Wow, you are excited. And we love that! Our homes are ready for move-in now. #[a(href=core.url + "/contact-us") Schedule a tour] to come by and view our available homes and get your questions answered by our leasing team.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt I’m not in town right now…how do I apply?
+				dd We are here for you no matter where you reside – 24/7, 365 days a year.  #[a(href=core.url + "/contact-us") Contact us] for more information.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt What do the homes look like?
+				dd Well, to start, they’re smart and modern. Common features include big windows, stainless steel appliances, polished concrete, wood or modern carpet floor coverings, and walk-in closets. #[a(href=core.url + "/gallery") Check out some pics] we took.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt What types of floor plans are available?
+				dd Heron offers a variety of floor plans, including Lofts, Urban 1-bedrooms, spacious 2-bedrooms, and even 3-bedrooms. We know everyone has different ideas about space and price, so we wanted to cover every base. #[a(href=core.url + "/choose-your-home") Explore the options].
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt What is an Urban 1-Bedroom?
+				dd It’s like a studio apartment, but even better!  An Urban 1-Bedroom typically has 3 walls and a closet in the bedroom area but doesn’t have an actual door.  The bedroom flows into the living areas, but you don’t have to sleep with your head next to the fridge like many studio apartments. It’s truly the best of both worlds.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt How much is rent?
+				dd Rent varies based on home size, location in the building, and special features unique to each home. Each home has been carefully value-priced according to its unique characteristics.  Be sure to visit our #[a(href=core.url + "/choose-your-home") Choose Your Home] page where you can filter on the rent price that fits your budget. Or reach out to our leasing team at any time at #[a(href=property.telLink) #{property.telText}] or #[a(href=property.emailLink) email] and we will be happy to share the current rent for any specific home you are interested in.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt Do the apartments have washers and dryers?
+				dd You betcha!  No quarters here.  Each home has its own full-size, energy-efficient washer and dryer.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt Will there be parking?
+				dd Yes.  To school or work and back, parking is available in our easy-access underground garage! But don’t worry if you don’t have a car- Heron is so close to public transit! #[a(href=core.url + "/neighborhood") Check out our map].
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt Will there be bike storage?
+				dd Absolutely and lots of it... You can choose from our bike racks or our secure bike lockers. And don’t worry, we even have an on-site bike repair area!
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt What will the amenities include?
+				dd This is the fun part. There’s a fitness center, a beautifully landscaped interior courtyard including a community grill, outdoor fireplace, bike repair area, and a decked-out media room. #[a(href=core.url + "/amenities") Check out all the amenities].
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt What services do you offer?
+				dd What don’t we offer!  Let us know how we can help you no matter what you need. Package delivery, dinner hot-spot recommendations, dog walking service recommendations, free community wi-fi, monthly events for residents to mix and mingle and after-hours emergency services – we’ve done it all and we don’t mind a bit. #[a(href=core.url + "/amenities") Check out our amenities].
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt Can I have pets?
+				dd Absolutely, Fido is more than welcome. Cats and goldfish too. We will even help you find an awesome dog walking service or vet, too! #[a(href=core.url + "/amenities") Check out all of our amenities].
+			//-dl.c-accord.js-accord(data-aos="fade-up")
+				dt Can I make online payments?
+				dd Yes! Pay anytime through our online portal available to all residents.
+			dl.c-accord.js-accord(data-aos="fade-up")
+				dt How do I schedule a maintenance request?
+				dd Once you become a Heron resident, you will be assigned an Appfolio profile where you can easily schedule maintenance requests and pay rent online.  It’s pretty darn cool.
+			
+			
+			
+
+		
+	
+
+		

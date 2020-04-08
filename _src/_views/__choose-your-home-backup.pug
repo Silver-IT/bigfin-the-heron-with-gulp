@@ -1,0 +1,217 @@
+extends templates/base.pug
+
+block vars
+
+block scripts
+	script(src="https://unpkg.com/vue")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js")
+
+block content
+	
+	#js-units(data-state="list")
+		.js-units
+			.c-hero
+				.l-wrap.l-wrap--content
+					h1.c-hero__title Choose Your Home
+					.c-hero__content
+						p Add something here...
+				.c-hero__img(style=core.url + "/assets/upload/hero/choose-your-home.jpg")
+			
+			
+			#vue-filters
+				.l-wrap.l-wrap--padding
+					.c-filter
+						.c-filter__main
+							.c-filter__wrap
+								.c-filter__tab.js-filter(data-value="1" data-type="bed") 1 Bed
+								.c-filter__tab.js-filter(data-value="2" data-type="bed") 2 Beds
+								.c-filter__tab.js-filter(data-value="3" data-type="bed") 3 Beds
+								.c-filter__tab.js-filter(data-value="lw" data-type="bed") Live Work
+						a(href="#more").c-filter__extra.js-filter-more
+							i.fa.fa-sliders
+							|More Filters
+						#more.c-filter__more.mfp-hide
+							.c-filter__label Scheme
+							
+							.c-filter__grid
+								.c-filter__scheme.c-filter__scheme--a.js-filter(data-value="a - warm dark" data-type="scheme")
+									strong A
+									em Warm Dark
+								.c-filter__scheme.c-filter__scheme--b.js-filter(data-value="b - warm light" data-type="scheme")
+									strong B
+									em Warm Light
+								.c-filter__scheme.c-filter__scheme--c.js-filter(data-value="c - cool neutral" data-type="scheme")
+									strong C
+									em Cool Neutral
+							
+							.c-filter__grid
+								.c-filter__block
+									.c-filter__label Floor
+									.c-filter__item.js-filter(data-value="1" data-type="floor") 1
+									.c-filter__item.js-filter(data-value="3" data-type="floor") 3
+									.c-filter__item.js-filter(data-value="4" data-type="floor") 4
+									.c-filter__item.js-filter(data-value="5" data-type="floor") Top
+									
+								.c-filter__block
+									.c-filter__label Kitchen
+									.c-filter__item.js-filter(data-value="l" data-type="kitchen") L-Shaped
+									.c-filter__item.js-filter(data-value="u" data-type="kitchen") U-Shaped
+									.c-filter__item.js-filter(data-value="g" data-type="kitchen") G-Shaped
+									.c-filter__item.js-filter(data-value="i" data-type="kitchen") I-Shaped
+								
+								.c-filter__block
+									.c-filter__label Outdoor
+									.c-filter__item.js-filter(data-value="Deck" data-type="outdoor") Deck
+									.c-filter__item.js-filter(data-value="Juliette" data-type="outdoor") Juliette
+									.c-filter__item.js-filter(data-value="Ground Floor Patio" data-type="outdoor") Ground Floor Patio
+									.c-filter__item.js-filter(data-value="Courtyard Patio" data-type="outdoor") Courtyard Patio
+									.c-filter__item.js-filter(data-value="None" data-type="outdoor") None
+									
+								.c-filter__block
+									.c-filter__label Other
+									.c-filter__item.js-filter(data-value="yes" data-type="den") Den
+									.c-filter__item.js-filter(data-value="yes" data-type="loft") Loft
+									.c-filter__item.js-filter(data-value="yes" data-type="closet-wic") Walk-In Closet
+									.c-filter__item.js-filter(data-value="yes" data-type="ada") ADA Unit
+							
+							.c-filter__btn.c-btn.c-btn--center.js-filter-close Show Results
+					
+					.c-vue#vue-units
+						.c-vue__load
+							i.fa.fa-refresh.fa-spin
+						.c-vue__view
+							ul(v-if="units && units.length != 0")
+								li.c-unit.c-unit--head
+									.c-unit__wrap
+										.c-unit__id Unit
+										.c-unit__type Type
+										.c-unit__sf Size
+										.c-unit__scheme Scheme
+										.c-unit__view View
+								li.c-unit(v-for="unit in units" v-bind:key="unit.id" v-bind:data-id="unit.id")
+									a(v-bind:href="'#' + unit.id").c-unit__wrap
+										.c-unit__id {{unit.id}}
+										.c-unit__type {{unit.type}}
+										.c-unit__sf {{unit.sf}} SF
+										.c-unit__scheme {{unit.scheme}}
+										.c-unit__view {{unit.view}}
+										.c-unit__interact
+											.c-unit__cta Details
+								.c-paginate
+									.c-paginate__prev.js-page-prev: i.fa.fa-arrow-left
+									.c-paginate__current {{paginate.curPage + 1}} / {{paginate.totalPages}}
+									.c-paginate__next.js-page-next: i.fa.fa-arrow-right
+							.c-vue__none(v-else)
+								i.fa.fa-sliders
+								strong No Units Found
+								em Sorry, no units with those filter options are available. Would you like to #[span.js-filter-reset reset your filters]?
+
+								
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		#vue-page.js-page
+			.l-wrap.l-wrap--space.l-wrap--gray-overlap
+				.c-page(data-available="now" v-bind:key="unit.id")
+					.l-wrap.l-wrap--mid
+						.c-page__back.js-back
+							i.fa.fa-arrow-circle-o-left
+							|Back To Units
+						.c-page__forward.c-page__forward--mobile.js-scroll-form
+							|Schedule Tour
+							i.fa.fa-wpforms
+						a(href="https://www.on-site.com/apply/property/231597" target="_blank").c-page__forward.c-page__forward.c-page__forward--desktop
+							|Apply Now
+							i.fa.fa-arrow-circle-o-right
+						.c-page__details
+							.c-page__top
+								.c-page__title Unit #[strong {{unit.id}}]
+								.c-page__type {{unit.fulltype}}
+							.c-page__util
+								.c-page__link
+									|<a v-if="unit.id" v-bind:href="'#{base.url}/assets/units/pdf/' + unit.id + '.pdf'" target="_blank"><i class="fa fa-file-text"></i><em>Home</em> <strong>E-Brochure</strong></a>
+								.c-page__link
+									|<a v-if="unit.id" class="js-location" v-bind:href="'#{base.url}/assets/units/location/' + unit.id + '.jpg'" target="_blank"><i class="fa fa-map-marker"></i> <strong>Location</strong> <em>In Building</em></a>
+							.c-page__floor
+								|<img v-if="unit.id" v-bind:src="'#{base.url}/assets/units/floorplan/' + unit.id + '.jpg'">
+								//-img(v-else src="http://via.placeholder.com/600x360?text=Floorplan%20Unclear")
+								.c-page__disclaimer Graphics for illustration purposes only and all dimensions are approximate. Some layouts and unit features will vary based on the floor plan of the actual unit. Areas of the home are labeled only as suggestions. Pricing and availability are subject to change. See leasing team for details.
+							
+							.c-page__section Unit Details
+							ul.c-page__info
+								li
+									strong Availability
+									em Available Now
+								
+								li: br
+									
+								li
+									strong Size
+									em {{unit.sf}} SF
+								li
+									strong View
+									em {{unit.view}}
+								li
+									strong Floor
+									em {{unit.floor}}
+								
+								li: br
+									
+								li
+									strong Scheme
+									em {{unit.scheme}}
+								li
+									strong Kitchen
+									em {{unit.kitchen}}-Shaped
+								li(v-if="unit.outdoor != ''")
+									strong Outdoor
+									em {{unit.outdoor}}
+									
+								li: br
+									
+								li(v-if="unit.den > 0")
+									strong Den
+									em: i.fa.fa-check
+								li(v-if="unit.loft > 0")
+									strong Loft
+									em: i.fa.fa-check
+								li(v-if="unit.ada == 'YES'")
+									strong ADA Unit
+									em: i.fa.fa-check
+								//-li
+									strong Premium Appliances
+									em: i.fa.fa-check
+								//-li
+									strong Washer/Dryer
+									em: i.fa.fa-check
+								//-li
+									strong Energy Efficient
+									em: i.fa.fa-check
+								//-li
+									strong Price
+							
+							.c-page__section Standard Features
+							ul.c-page__standard
+								li Stainless steel Whirpool kitchen appliances
+								li Quartz countertops in both kitchen and bathroom
+								li Undermount retractable kitchen faucets
+								li Hard surface and laminate flooring optins
+								li Full Size Washer and Dryer 
+								li Customizable Thermostats
+								li Oversized windows
+								li Targeting LEED Gold #[a(href=base.url + "/sustainability") Learn More]
+
+							
+						.c-page__form.js-form
+							.c-page__sidetitle I'm Interested In This Unit
+							+form-contact('unit-form')
+							.c-page__phone
+								em Have questions? Call us today!
+								strong: a(href="tel:+14254349630") (425) 434-9630

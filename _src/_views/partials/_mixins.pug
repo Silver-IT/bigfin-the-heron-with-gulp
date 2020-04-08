@@ -1,0 +1,124 @@
+mixin w3w(color, size, text)
+	-
+		var light = '';
+		
+		if(typeof color == 'undefined' || color == 'white') {
+			color = 'white';
+			light = 'light';
+		}
+		if(typeof size == 'undefined') {
+			size = 'medium';
+		}
+		if(typeof text == 'undefined') {
+			text = 'true';
+		}
+	
+	.w3w
+		a(href="https://map.what3words.com/" + w3w.address target="_blank")
+			.w3w-embed(class="w3w-" + light + " " + "w3w-" + size)
+				style(type="text/css")
+					|@import url("https://assets.what3words.com/css/w3w-glyphicon.css");
+				.w3w-address.w3w-light
+					i.w3w-logo.colorpicker(style="color: " + color + ";")
+					if(text == 'true')
+						span.addr= w3w.address
+		a(href="https://what3words.com/about/" class="w3w-tip--" + light).w3w-tip.js-pop-iframe
+			i.fa.fa-question-circle-o
+			|#[strong What is this you ask?] This is a what3words address that pinpoints an exact 3m x 3m location for Heron. #[em Learn More].
+
+
+mixin form-contact(name)
+	form(method="post" name=name netlify).js-form
+		.field.field--left
+			label.field__label First Name #[span.field__required *]
+			.field__input
+				input(type="text" name="First Name").js-field-required
+		.field.field--right
+			label.field__label Last Name #[span.field__required *]
+			.field__input
+				input(type="text" name="Last Name").js-field-required
+		
+		.field.field--left
+			label.field__label Email #[span.field__required *]
+			.field__input
+				input(type="email" name="Email").js-field-required
+		.field.field--right
+			label(class="field__label") Phone
+			.field__input
+				input(type="text" name="Phone")
+
+		.field.field--left
+			label.field__label Desired Move-In Date
+			.field__input
+				input(type="text" name="Desired Move-In Date")
+		.field.field--right
+			label(class="field__label") How did you hear about us? #[span.field__required *]
+			.field__select
+				select(name="Lead Attribution").js-field-required
+					option(selected disabled) Please select one...
+					option Search Engine
+					option Craigslist
+					option Digital Ad
+					option Walk/Drive By
+					option Signage
+					option Event
+					option Word-of-Mouth
+					option Social Media
+
+		.field
+			label.field__label Schedule A Tour
+			.field__wrap
+				.field__checkbox
+					input(id="checkbox1" type="checkbox" name="Tour" value="Yes")
+					label(for="checkbox1") I'd like to take a tour!
+		
+		.field.field--hidden
+			input(type="text" name="Unit").js-field-unit
+			input(type="text" name="Other Units Looked At").js-field-unit-other
+		
+		.field
+			label(class="field__label") Message
+			.field__textarea
+				textarea(name="Message")
+
+		button(class="c-form__submit" type="submit").js-field-submit Submit Message
+
+
+mixin panel(mod, title, img, animate)
+	- var imageAnimate = '';
+	- var contentAnimate = '';
+	- if(animate != undefined && animate !== false) {
+	- imageAnimate = animate[0];
+	- contentAnimate = animate[1];
+	- }
+	
+	.c-panel(class="c-panel--" + mod)
+		.c-panel__content(data-aos=contentAnimate)
+			h2.c-panel__title= title
+			
+			- if(mod != 'full') {
+				.c-panel__text.c-text(data-aos="fade-up" data-aos-delay="150")
+					block
+			- } else {
+				.c-panel__wrap
+					block
+			- }
+		
+		- if(img == 'contact-form') {
+			.c-panel__form(data-aos=imageAnimate)
+				.c-form.c-form--main
+					+form-contact('contact-page-form')
+		- } else if(img != false) {
+			- var bg = "background-image: url('" + img + "');";
+			.c-panel__img(data-aos=imageAnimate)
+				.c-panel__bg(style=bg)
+		- }
+
+mixin hero(title, img)
+	- var bg = "background-image: url('" + img + "');";
+	.c-hero
+		.l-wrap.l-wrap--content
+			h1.c-hero__title= title
+			//-.c-hero__content
+				block
+		.c-hero__img(style=bg)
